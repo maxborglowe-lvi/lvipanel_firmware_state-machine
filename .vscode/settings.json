@@ -1,0 +1,19 @@
+{
+    "files.associations": {
+        "peripherals.h": "c",
+        "stm32f0xx_hal.h": "c",
+        "stdint.h": "c",
+        "main.h": "c",
+        "timer.h": "c",
+        "stdint-gcc.h": "c",
+        "cstdint": "c",
+        "stm32f0xx_hal_conf.h": "c",
+        "lights.h": "c",
+        "dma.h": "c",
+        "tim.h": "c",
+        "compare": "c",
+        "gpio.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c"
+    }
+}
