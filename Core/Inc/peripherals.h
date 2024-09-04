@@ -16,8 +16,8 @@
 #include "stdlib.h"
 #include "string.h"
 
-#define PERIPH_HOLD_TIME 	750 /* ms */
-#define PERIPH_PRESS_DOUBLE_TIME 350
+#define PERIPHERAL_HOLD_TIME 	750 /* ms */
+#define PERIPHERAL_PRESS_DOUBLE_TIME 350 /* ms */
 
 #define CONCAT_ENC_READ(ap, a, bp, b) ((ap<<3) | (a<<2) | (bp<<1) | (b))
 #define CONCAT_BTN_READ(sp, s) ((sp<<1) | (s))
@@ -25,13 +25,13 @@
 #define MAX_AMT_ENCS 		3 /* Maximum amount of buttons allowed */
 #define MAX_AMT_BTNS 		6 /* Maximum amount of buttons allowed */
 
-#define PERIPH_NOT_INIT		0x00 /* FLAG: Peripheral not initialized */
-#define PERIPH_INIT			0x01 /* FLAG: Peripheral initialized */
+#define PERIPHERAL_NOT_INIT		0x00 /* FLAG: Peripheral not initialized */
+#define PERIPHERAL_INIT			0x01 /* FLAG: Peripheral initialized */
 
 typedef enum {
 	PERIPHERAL_EVENT_IDLE,
 
-	PERIPHERAL_EVENT_ONOFF_PRESS,	
+	PERIPHERAL_EVENT_ONOFF_PRESS = 1,	
 	PERIPHERAL_EVENT_ONOFF_PRESS_DOUBLE,
 	PERIPHERAL_EVENT_ONOFF_PRESS_HOLD,
 
@@ -57,11 +57,13 @@ typedef enum {
 	
 } PeripheralEvent;
 
+extern PeripheralEvent peripheralEvent;
+
 enum {
 	PERIPHERAL_EVENT_ID_PRESS,
 	PERIPHERAL_EVENT_ID_PRESS_HOLD,
 	PERIPHERAL_EVENT_ID_PRESS_DOUBLE	
-}; 
+};
 
 typedef enum {
 	BTN_ID_ONOFF = 0x01,
@@ -69,7 +71,6 @@ typedef enum {
 	BTN_ID_ZOOM = 0x03,
 	BTN_ID_COLOR_NATURAL = 0x04,
 	BTN_ID_COLOR_ARTIFICIAL = 0x05,
-	
 
 	ENC_ID_FUNCTION = 0x01,
 	ENC_ID_ZOOM	= 0x02,
@@ -143,26 +144,26 @@ void periphButtonExec(Button *btn);
 /* The table below shows the states of an UNMATCHED encoder based on its channels' input signals.
  * The signals below will be concatenated in the order that they are shown, creating a 4-bit pattern.
  *
- * enc_ch_b_prev	enc->ch_b	enc_ch_a_prev		enc->ch_a	enc->state
+ * enc_ch_a_prev	enc->ch_a	enc_ch_b_prev		enc->ch_b	enc->state
  * 		1				1				1				1		ENC_STATE_RST
  * 		0				0				0				0		ENC_STATE_RST
  * 		--------------------------------------------------
- * 		1				0				0				0		ENC_STATE_CW
- * 		0				1				1				1		ENC_STATE_CW
+ * 		0				0				1				0		ENC_STATE_CW
+ * 		1				1				0				1		ENC_STATE_CW
  * 		--------------------------------------------------
- * 		0				0				1				0		ENC_STATE_CCW
- * 		1				1				0				1		ENC_STATE_CCW
+ * 		1				0				0				0		ENC_STATE_CCW
+ * 		0				1				1				1		ENC_STATE_CCW
  * 		*/
 
 /* The table below shows the states of an MATCHED encoder based on its channels' input signals.
  *
- * enc_ch_b_prev	enc->ch_b	enc_ch_a_prev		enc->ch_a	enc->state
+ * enc_ch_a_prev	enc->ch_a	enc_ch_b_prev		enc->ch_b	enc->state
  * 		1				1				1				1		ENC_STATE_RST
  * 		0				0				0				0		ENC_STATE_RST
  * 		--------------------------------------------------
- * 		1				0				0				0		ENC_STATE_CW
+ * 		0				0				1				0		ENC_STATE_CW
  * 		--------------------------------------------------
- * 		0				0				1				0		ENC_STATE_CCW
+ * 		1				0				0				0		ENC_STATE_CCW
  * 		*/
 
 typedef enum{

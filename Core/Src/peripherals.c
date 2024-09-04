@@ -37,12 +37,12 @@ void Peripheral_ButtonInit(Button *btn, PeripheralID id, ButtonMode mode, GPIO_T
     btn->mode = mode;
     btn->sig = (mode == BTN_MODE_LO) ? BTN_LO_RST : BTN_HI_RST;
     btn->state = BTN_STATE_RST;
-    btn->init_flag = PERIPH_INIT;
+    btn->init_flag = PERIPHERAL_INIT;
     btn->PORT = PORT;
     btn->PIN = PIN;
-    timerInit(&btn->timer_hold, PERIPH_HOLD_TIME);
-    timerInit(&btn->timer_press, PERIPH_HOLD_TIME);
-    timerInit(&btn->timer_press_double, PERIPH_PRESS_DOUBLE_TIME);
+    timerInit(&btn->timer_hold, PERIPHERAL_HOLD_TIME);
+    timerInit(&btn->timer_press, PERIPHERAL_HOLD_TIME);
+    timerInit(&btn->timer_press_double, PERIPHERAL_PRESS_DOUBLE_TIME);
     timerDisable(&btn->timer_hold);
     timerDisable(&btn->timer_press);
     timerDisable(&btn->timer_press_double);
@@ -122,7 +122,7 @@ void Peripheral_EncoderInit(Encoder *enc, PeripheralID id, EncoderMode mode, GPI
     enc->id = id;
     enc->mode = mode;
     enc->state = ENC_STATE_RST;
-    enc->init_flag = PERIPH_INIT;
+    enc->init_flag = PERIPHERAL_INIT;
     enc->ch_a = 0x00;
     enc->ch_b = 0x00;
     enc->PORT_A = PORT_A;

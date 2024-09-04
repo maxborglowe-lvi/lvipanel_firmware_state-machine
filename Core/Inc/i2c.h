@@ -35,13 +35,17 @@ extern "C" {
 extern I2C_HandleTypeDef hi2c1;
 
 /* USER CODE BEGIN Private defines */
-
+#define PACKET_SIZE 1
 /* USER CODE END Private defines */
 
 void MX_I2C1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+extern __IO uint32_t Xfer_Direction;
+extern __IO uint32_t Xfer_Complete;
 
+extern uint8_t *i2c_tx;
+extern uint8_t *i2c_rx;
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
