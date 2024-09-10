@@ -18,6 +18,7 @@
         "system.h": "c",
         "panel.h": "c",
         "usart.h": "c",
-        "i2c.h": "c"
+        "i2c.h": "c",
+        "panel_events.h": "c"
     }
 }

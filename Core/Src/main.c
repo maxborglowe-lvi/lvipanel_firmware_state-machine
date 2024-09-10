@@ -123,7 +123,7 @@ int main(void)
 
 	Panel_Init();
 
-	
+	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, SET);
 
 	HAL_TIM_Base_Start_IT(&htim14);
 	timerInterruptLock = TIM_ITR_UNLOCKED;
@@ -204,26 +204,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 
-void OnOff_Trigger() {
-	GPIO_InitTypeDef GPIO_InitStruct = { 0 };
-	GPIO_InitStruct.Pin = ONOFF_Pin;
 
-	/* Temporarily change the ONOFF pin GPIO mode to OUTPUT */
-	GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-	HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
-
-	/* Trigger and hold ONOFF pin active LOW */
-	HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, RESET);
-	HAL_Delay(300);
-	HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, SET);
-
-	/* Change ONOFF pin GPIO mode back to INPUT */
-	GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-	GPIO_InitStruct.Pull = GPIO_NOPULL;
-	HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
-}
 
 // void System_OnOff(){
 // 	if(systemState == SYSTEM_STATE_OFF){
