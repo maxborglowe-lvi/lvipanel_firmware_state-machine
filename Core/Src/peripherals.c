@@ -8,18 +8,18 @@ PeripheralGroup *peripheralGroup;
 PeripheralEvent peripheralEvent;
 
 // Use a lookup table to handle button presses
-static PeripheralEvent buttonEventTable[MAX_AMT_BTNS][3] = {
+static PeripheralEvent buttonEventTable[MAX_AMT_BTNS][4] = {
 	// BTN_STATE_PRESS           BTN_STATE_HOLD           BTN_STATE_REL
-	[BTN_ID_ONOFF]				= { PERIPHERAL_EVENT_ONOFF_PRESS, PERIPHERAL_EVENT_ONOFF_PRESS_HOLD, PERIPHERAL_EVENT_ONOFF_PRESS_DOUBLE },
-	[BTN_ID_FUNCTION] 			= { PERIPHERAL_EVENT_FUNCTION_PRESS, PERIPHERAL_EVENT_FUNCTION_PRESS_HOLD, PERIPHERAL_EVENT_FUNCTION_PRESS_DOUBLE },
-	[BTN_ID_ZOOM]     			= { PERIPHERAL_EVENT_ZOOM_PRESS,     PERIPHERAL_EVENT_ZOOM_PRESS_HOLD,     PERIPHERAL_EVENT_ZOOM_PRESS_DOUBLE },
-	[BTN_ID_COLOR_ARTIFICIAL] 	= { PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS, PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_HOLD, PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_DOUBLE },
-	[BTN_ID_COLOR_NATURAL]    	= { PERIPHERAL_EVENT_COLOR_NATURAL_PRESS,    PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_HOLD,    PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_DOUBLE }
+	[BTN_ID_ONOFF]				= {PERIPHERAL_EVENT_ONOFF_PRESS,               PERIPHERAL_EVENT_ONOFF_PRESS_HOLD,              PERIPHERAL_EVENT_ONOFF_PRESS_DOUBLE,            PERIPHERAL_EVENT_ONOFF_RELEASE},
+	[BTN_ID_FUNCTION] 			= {PERIPHERAL_EVENT_FUNCTION_PRESS,            PERIPHERAL_EVENT_FUNCTION_PRESS_HOLD,           PERIPHERAL_EVENT_FUNCTION_PRESS_DOUBLE,         PERIPHERAL_EVENT_FUNCTION_RELEASE},
+	[BTN_ID_ZOOM]     			= {PERIPHERAL_EVENT_ZOOM_PRESS,                PERIPHERAL_EVENT_ZOOM_PRESS_HOLD,               PERIPHERAL_EVENT_ZOOM_PRESS_DOUBLE,             PERIPHERAL_EVENT_ZOOM_RELEASE},
+	[BTN_ID_COLOR_ARTIFICIAL] 	= {PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS,    PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_HOLD,   PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_DOUBLE, PERIPHERAL_EVENT_COLOR_ARTIFICIAL_RELEASE},
+	[BTN_ID_COLOR_NATURAL]    	= {PERIPHERAL_EVENT_COLOR_NATURAL_PRESS,       PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_HOLD,      PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_DOUBLE,    PERIPHERAL_EVENT_COLOR_NATURAL_RELEASE}
 };
 
 static PeripheralEvent encoderEventTable[MAX_AMT_ENCS][2] = {
-	[ENC_ID_FUNCTION] = { PERIPHERAL_EVENT_FUNCTION_UP, PERIPHERAL_EVENT_FUNCTION_DN },
-	[ENC_ID_ZOOM]     = { PERIPHERAL_EVENT_ZOOM_UP,     PERIPHERAL_EVENT_ZOOM_DN }
+	[ENC_ID_FUNCTION] = { PERIPHERAL_EVENT_FUNCTION_CW, PERIPHERAL_EVENT_FUNCTION_CCW },
+	[ENC_ID_ZOOM]     = { PERIPHERAL_EVENT_ZOOM_CW,     PERIPHERAL_EVENT_ZOOM_CCW }
 };
 
 uint8_t enc_read;
@@ -72,14 +72,14 @@ void Peripheral_ButtonScan(Button *btn) {
 
 /** @brief Executes the scanned button commands. */
 void Peripheral_ButtonExec(Button *btn) {
-    uint8_t notPressDouble = timerCountUp(&btn->timer_press_double);
     peripheralEvent = PERIPHERAL_EVENT_IDLE;
+
+    #ifdef PERIPHERAL_SPECIAL_EVENTS
+    uint8_t notPressDouble = timerCountUp(&btn->timer_press_double);
 
     if (notPressDouble) {
         timerDisable(&btn->timer_press_double);
     }
-
-    
 
     switch (btn->state) {
         case BTN_STATE_PRESS:
@@ -105,6 +105,19 @@ void Peripheral_ButtonExec(Button *btn) {
         default:
             break;
     }
+    #else
+    switch (btn->state) {
+        case BTN_STATE_PRESS:
+            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
+            break;
+        case BTN_STATE_REL:
+            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_RELEASE];
+            break;
+        default:
+            break;
+    }
+    #endif
+    
 }
 
 /**

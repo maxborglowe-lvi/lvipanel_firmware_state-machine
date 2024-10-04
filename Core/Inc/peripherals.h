@@ -17,9 +17,6 @@
 #include "string.h"
 #include "peripheral_events.h"
 
-#define PERIPHERAL_HOLD_TIME 	750 /* ms */
-#define PERIPHERAL_PRESS_DOUBLE_TIME 350 /* ms */
-
 #define CONCAT_ENC_READ(ap, a, bp, b) ((ap<<3) | (a<<2) | (bp<<1) | (b))
 #define CONCAT_BTN_READ(sp, s) ((sp<<1) | (s))
 
@@ -29,12 +26,19 @@
 #define PERIPHERAL_NOT_INIT		0x00 /* FLAG: Peripheral not initialized */
 #define PERIPHERAL_INIT			0x01 /* FLAG: Peripheral initialized */
 
+/* Uncomment when using firmware based double-clicks and hold events */
+// #define PERIPHERAL_SPECIAL_EVENTS
+
+#define PERIPHERAL_HOLD_TIME 	750 /* ms */
+#define PERIPHERAL_PRESS_DOUBLE_TIME 350 /* ms */
+
 extern PeripheralEvent peripheralEvent;
 
 enum {
 	PERIPHERAL_EVENT_ID_PRESS,
 	PERIPHERAL_EVENT_ID_PRESS_HOLD,
-	PERIPHERAL_EVENT_ID_PRESS_DOUBLE	
+	PERIPHERAL_EVENT_ID_PRESS_DOUBLE,
+	PERIPHERAL_EVENT_ID_RELEASE
 };
 
 typedef enum {

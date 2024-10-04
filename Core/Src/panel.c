@@ -69,17 +69,14 @@ void Panel_Scan()
  */
 void Panel_HandleEventPeripherals()
 {
-
-
     if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS){
-        if(!tryBoot) Panel_OnOff();
+        Panel_OnOff();
     }
 
     // System OFF: Only allow ONOFF_PRESS event
     if (systemState == SYSTEM_STATE_OFF)
     {
         if(!systemFlag){
-
             Panel_LightOff(PANEL_LIGHTS_FADE_TIME);
         }
 
@@ -89,12 +86,8 @@ void Panel_HandleEventPeripherals()
 
         if (peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS)
         {
-            // Panel_OnOff();
             panelEvent = PANEL_EVENT_SYSTEM_BOOT;
             systemState = SYSTEM_STATE_BOOT;
-            
-            // //Then turn off both LEDs
-            // Panel_LightOff(PANEL_LIGHTS_FADE_TIME);
         }
         return;
     }
@@ -102,14 +95,10 @@ void Panel_HandleEventPeripherals()
     // System BOOT: Flash green light
     else if(systemState == SYSTEM_STATE_BOOT) {
         Panel_LightGreenFlash(PANEL_LIGHTS_FADE_TIME);
-        Panel_TryBoot();
     }
 
     // System SHUTDOWN: Flash yellow light
     else if(systemState == SYSTEM_STATE_SHUTDOWN){
-        //First turn on both lights fully to synchronize the PWM values
-        
-        
         //Then start flashing the yellow LED.
         Panel_LightYellowFlash(PANEL_LIGHTS_FADE_TIME);
     }
@@ -127,7 +116,6 @@ void Panel_HandleEventPeripherals()
         switch (peripheralEvent)
         {
             case PERIPHERAL_EVENT_ONOFF_PRESS:
-                // Panel_OnOff();
                 panelEvent = PANEL_EVENT_SYSTEM_SHUTDOWN;
                 systemState = SYSTEM_STATE_SHUTDOWN;
                 break;
@@ -141,19 +129,13 @@ void Panel_HandleEventPeripherals()
     {
         case SYSTEM_EVENT_OFF:
             systemFlag = SYSTEM_FLAG_NONE;
-            // if (systemState == SYSTEM_STATE_SHUTDOWN)
-            // {
                 systemState = SYSTEM_STATE_OFF;
-            // }
             break;
         case SYSTEM_EVENT_ON:
             systemFlag = SYSTEM_FLAG_NONE;
-            // if (systemState == SYSTEM_STATE_BOOT)
-            // {
                 systemState = SYSTEM_STATE_ON;
-            // }
             break;
-
+            
         case SYSTEM_EVENT_LIGHT_GREEN_SOLID:
             systemFlag = SYSTEM_FLAG_LIGHT_GREEN_SOLID;
             break;
@@ -193,6 +175,7 @@ void Panel_HandleEventPeripherals()
  */
 void Panel_CheckSystemFlag()
 {
+    //reset light sequence --> synchronize PWM timers
     if(systemFlagPrev != systemFlag){
         Panel_LightOff(PANEL_LIGHTS_FADE_TIME_FAST);
     }
@@ -314,6 +297,7 @@ uint8_t Panel_LightOff(float fade_time){
     return 0;  // Indicate completion, return value could be used for status if needed
 }
 
+/** Triggers ONOFF signal ACTIVE-LOW for 500ms, in order to boot/shutdown system */
 void Panel_OnOff()
 {
     GPIO_InitTypeDef GPIO_InitStruct = {0};

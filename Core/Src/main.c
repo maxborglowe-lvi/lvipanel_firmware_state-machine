@@ -123,7 +123,7 @@ int main(void)
 
 	Panel_Init();
 
-	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, SET);
+	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, RESET);
 
 	HAL_TIM_Base_Start_IT(&htim14);
 	timerInterruptLock = TIM_ITR_UNLOCKED;
@@ -139,13 +139,11 @@ int main(void)
 		/* 1. Peripheral scan sequence */
 		if (timerInterruptLock == TIM_ITR_LOCKED)
 		{ /* Wait for timer interrupt to happen */
-			// __disable_irq();
 
 			Panel_Scan();
 
 			timerInterruptLock = TIM_ITR_UNLOCKED;
 
-			// __enable_irq();
 		}
 
     /* USER CODE END WHILE */

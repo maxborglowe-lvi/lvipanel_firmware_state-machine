@@ -1,8 +1,5 @@
 
 
-typedef enum {
-    PANEL_COMMAND_ZOOM_UP,
-}
 
 /* User events and states output via i2c) */
 
