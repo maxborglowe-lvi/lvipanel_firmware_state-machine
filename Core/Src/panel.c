@@ -16,12 +16,18 @@ Timer timer_main;     ///< Main timer object
 PanelEvent panelEvent;///< Current panel event
 SystemEvent systemEvent;///< Current system event
 SystemState systemState;///< Current system state
+SystemState systemStatePrev;
 SystemFlag systemFlag; ///< Current system flag
 SystemFlag systemFlagPrev; ///< Previous system flag for change detection
 
+uint8_t PanelOnOffTrigger = 0;
+
+Timer timerPanelOnOff;
+
+GPIO_InitTypeDef GPIO_InitStruct = {0};
+
 uint8_t yellowSyncComplete = 0;
 
-uint16_t tryBoot = 0;
 
 /**
  * @brief Initializes the panel and associated peripherals.
@@ -51,6 +57,8 @@ void Panel_Init()
     systemEvent = SYSTEM_EVENT_IDLE;
     systemState = SYSTEM_STATE_OFF;
     systemFlag = SYSTEM_FLAG_NONE;
+
+    timerInit(&timerPanelOnOff, 500); // set 500 tick timer for panel ONOFF triggering
 }
 
 /**
@@ -69,60 +77,40 @@ void Panel_Scan()
  */
 void Panel_HandleEventPeripherals()
 {
+
+    if(timerCountUp(&timerPanelOnOff)){
+        Panel_OnOffEnd();
+    }
+
     if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS){
         Panel_OnOff();
+
+        if(systemState == SYSTEM_STATE_OFF){
+            systemFlag = SYSTEM_FLAG_LIGHT_GREEN_FLASH;
+        }
+        // else if(systemState == SYSTEM_STATE_ON){
+        //     systemFlag = SYSTEM_FLAG_LIGHT_YELLOW_FLASH;
+        // }
+    } else if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS_HOLD){
+        if(systemState == SYSTEM_STATE_OFF){
+            systemFlag = SYSTEM_FLAG_LIGHT_OFF;
+        }
     }
 
-    // System OFF: Only allow ONOFF_PRESS event
-    if (systemState == SYSTEM_STATE_OFF)
+    if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
     {
-        if(!systemFlag){
-            Panel_LightOff(PANEL_LIGHTS_FADE_TIME);
-        }
-
-        if(systemEvent == SYSTEM_EVENT_ON){
-            systemState = SYSTEM_STATE_ON;
-        }
-
-        if (peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS)
-        {
-            panelEvent = PANEL_EVENT_SYSTEM_BOOT;
-            systemState = SYSTEM_STATE_BOOT;
-        }
-        return;
-    }
-
-    // System BOOT: Flash green light
-    else if(systemState == SYSTEM_STATE_BOOT) {
-        Panel_LightGreenFlash(PANEL_LIGHTS_FADE_TIME);
-    }
-
-    // System SHUTDOWN: Flash yellow light
-    else if(systemState == SYSTEM_STATE_SHUTDOWN){
-        //Then start flashing the yellow LED.
-        Panel_LightYellowFlash(PANEL_LIGHTS_FADE_TIME);
-    }
-
-    // System ON: Handle events and flags
-    else if (systemState == SYSTEM_STATE_ON)
-    {
-        Panel_CheckSystemFlag();
-
-        if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
-        {
-            panelEvent = (PanelEvent)peripheralEvent;
-        }
-
-        switch (peripheralEvent)
-        {
-            case PERIPHERAL_EVENT_ONOFF_PRESS:
-                panelEvent = PANEL_EVENT_SYSTEM_SHUTDOWN;
-                systemState = SYSTEM_STATE_SHUTDOWN;
-                break;
-            default:
-                break;
+        panelEvent = (PanelEvent)peripheralEvent;
+        if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS){
+            if(systemState == SYSTEM_STATE_OFF){
+                panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_BOOT;
+            }
+            else if(systemState == SYSTEM_STATE_ON){
+                panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_SHUTDOWN; 
+            }
         }
     }
+
+    systemStatePrev = systemState; 
 
     // Handle system events and update system state
     switch (systemEvent)
@@ -132,42 +120,60 @@ void Panel_HandleEventPeripherals()
                 systemState = SYSTEM_STATE_OFF;
             break;
         case SYSTEM_EVENT_ON:
-            systemFlag = SYSTEM_FLAG_NONE;
+            // systemFlag = SYSTEM_FLAG_NONE;
                 systemState = SYSTEM_STATE_ON;
             break;
             
         case SYSTEM_EVENT_LIGHT_GREEN_SOLID:
             systemFlag = SYSTEM_FLAG_LIGHT_GREEN_SOLID;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_GREEN_FLASH:
             systemFlag = SYSTEM_FLAG_LIGHT_GREEN_FLASH;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_GREEN_FLASH_FAST:
             systemFlag = SYSTEM_FLAG_LIGHT_GREEN_FLASH_FAST;
+            systemState = SYSTEM_STATE_ON;
             break;
+
         case SYSTEM_EVENT_LIGHT_YELLOW_SOLID:
             systemFlag = SYSTEM_FLAG_LIGHT_YELLOW_SOLID;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_YELLOW_FLASH:
             systemFlag = SYSTEM_FLAG_LIGHT_YELLOW_FLASH;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_YELLOW_FLASH_FAST:
             systemFlag = SYSTEM_FLAG_LIGHT_YELLOW_FLASH_FAST;
+            systemState = SYSTEM_STATE_ON;
             break;
+
         case SYSTEM_EVENT_LIGHT_RED_SOLID:
             systemFlag = SYSTEM_FLAG_LIGHT_RED_SOLID;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_RED_FLASH:
             systemFlag = SYSTEM_FLAG_LIGHT_RED_FLASH;
+            systemState = SYSTEM_STATE_ON;
             break;
         case SYSTEM_EVENT_LIGHT_RED_FLASH_FAST:
             systemFlag = SYSTEM_FLAG_LIGHT_RED_FLASH_FAST;
+            systemState = SYSTEM_STATE_ON;
             break;
+
+        case SYSTEM_EVENT_LIGHT_OFF:
+            systemFlag = SYSTEM_FLAG_LIGHT_OFF;
+            systemState = SYSTEM_STATE_OFF;
+
         default:
             break;
     }
 
     systemEvent = SYSTEM_EVENT_IDLE;
+
+    Panel_CheckSystemFlag();
 }
 
 /**
@@ -211,22 +217,16 @@ void Panel_CheckSystemFlag()
         case SYSTEM_FLAG_LIGHT_RED_FLASH_FAST:
             Panel_LightRedFlash(PANEL_LIGHTS_FADE_TIME_FAST);
             break;
+
+        case SYSTEM_FLAG_LIGHT_OFF:
+            Panel_LightOff(PANEL_LIGHTS_FADE_TIME);
+            break;
         
         default:
-            Panel_LightGreenSolid(PANEL_LIGHTS_FADE_TIME);
             break;
     }
 
     systemFlagPrev = systemFlag;
-}
-
-void Panel_TryBoot(){
-    if(tryBoot == TRY_BOOT_CYCLES){
-        systemState = SYSTEM_STATE_OFF;
-        tryBoot = 0;
-        return;
-    }
-    tryBoot++;
 }
 
 void Panel_LightGreenSolid(float fade_time){
@@ -300,7 +300,15 @@ uint8_t Panel_LightOff(float fade_time){
 /** Triggers ONOFF signal ACTIVE-LOW for 500ms, in order to boot/shutdown system */
 void Panel_OnOff()
 {
-    GPIO_InitTypeDef GPIO_InitStruct = {0};
+    Panel_OnOffBegin();
+    // Panel_OnOffEnd();
+    
+}
+
+void Panel_OnOffBegin(){
+    PanelOnOffTrigger = 1;
+    timerEnable(&timerPanelOnOff);
+
     GPIO_InitStruct.Pin = ONOFF_Pin;
 
     /* Temporarily change the ONOFF pin GPIO mode to OUTPUT */
@@ -311,7 +319,12 @@ void Panel_OnOff()
 
     /* Trigger and hold ONOFF pin active LOW */
     HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, RESET);
-    HAL_Delay(500);
+}
+
+void Panel_OnOffEnd(){
+    PanelOnOffTrigger = 0;
+    timerDisable(&timerPanelOnOff);
+
     HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, SET);
 
     /* Change ONOFF pin GPIO mode back to INPUT */
@@ -327,7 +340,6 @@ void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 
 void HAL_I2C_SlaveRxCpltCallback(I2C_HandleTypeDef *I2cHandle)
 {
-    // memset(i2c_rx, 0, PACKET_SIZE);
 }
 
 void HAL_I2C_AddrCallback(I2C_HandleTypeDef *hi2c, uint8_t TransferDirection, uint16_t AddrMatchCode)

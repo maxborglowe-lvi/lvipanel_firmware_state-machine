@@ -108,11 +108,20 @@ void Peripheral_ButtonExec(Button *btn) {
     #else
     switch (btn->state) {
         case BTN_STATE_PRESS:
+            timerReset(&btn->timer_hold);
+            timerEnable(&btn->timer_hold);
             peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
+            break;
+        case BTN_STATE_HOLD:
+            if (timerCountUp(&btn->timer_hold)) {
+                peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_HOLD];
+            }
             break;
         case BTN_STATE_REL:
             peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_RELEASE];
+            timerDisable(&btn->timer_hold);
             break;
+        
         default:
             break;
     }

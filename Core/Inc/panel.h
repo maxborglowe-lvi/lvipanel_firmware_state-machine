@@ -4,6 +4,7 @@
 #include "tim.h"
 #include "i2c.h"
 #include "panel_events.h"
+#include "timer.h"
 
 #define PANEL_LIGHTS_FADE_TIME 0.5f
 #define PANEL_LIGHTS_FADE_TIME_FAST 5.0f

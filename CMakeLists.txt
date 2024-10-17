@@ -34,7 +34,7 @@ enable_language(C ASM)
 
 # Core project settings
 project(${CMAKE_PROJECT_NAME})
-message("Build type: " ${CMAKE_BUILD_TYPE})
+message("Build type: " ${CMAKE_BUILD_TYPE}) 
 
 file(GLOB_RECURSE SRC_FILES "Core/Src/*.c")
 
@@ -45,18 +45,18 @@ add_executable(${CMAKE_PROJECT_NAME} ${SRC_FILES})
 add_subdirectory(cmake/stm32cubemx)
 
 # Link directories setup
-target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE
+target_link_directories(${CMAKE_PROJECT_NAME} PRIVATE 
     # Add user defined library search paths
 )
 
 # Add sources to executable
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE 
     Core/Src/ # Add this line with the correct path to your source file
     # Add other user sources here as needed
 )
 
 # Add include paths
-target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE 
     Core/Inc/  # Add this line with the correct path to your include files
     # Add other user-defined include paths here as needed
 )

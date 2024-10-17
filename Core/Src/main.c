@@ -113,7 +113,8 @@ int main(void)
 
 	__disable_irq();
 
-	Peripheral_InitGroup();
+
+	Peripheral_InitGroup(); 
 
 	if(HAL_I2C_EnableListen_IT(&hi2c1) != HAL_OK)
 	{
@@ -123,7 +124,9 @@ int main(void)
 
 	Panel_Init();
 
-	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, RESET);
+	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, SET);
+	// HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, RESET);
+
 
 	HAL_TIM_Base_Start_IT(&htim14);
 	timerInterruptLock = TIM_ITR_UNLOCKED;

@@ -1407,14 +1407,8 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .data          0x00000000        0x0 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .bss           0x00000000        0x0 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .text.timerEnable
-                0x00000000       0x16 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .text.timerIsEnabled
                 0x00000000       0x14 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .text.timerCountUp
-                0x00000000       0x3a CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .text.timerReset
-                0x00000000       0x16 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .debug_macro   0x00000000      0xa8a CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .debug_macro   0x00000000       0x8e CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
@@ -3880,7 +3874,7 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x08000000                g_pfnVectors
                 0x080000c0                        . = ALIGN (0x4)
 
-.text           0x080000c0     0x6fc4
+.text           0x080000c0     0x7090
                 0x080000c0                        . = ALIGN (0x4)
  *(.text)
  .text          0x080000c0       0x48 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
@@ -3989,485 +3983,499 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
                 0x080019c4        0xc CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
                 0x080019c4                Error_Handler
  .text.Panel_Init
-                0x080019d0       0xa4 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x080019d0       0xb4 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
                 0x080019d0                Panel_Init
  .text.Panel_Scan
-                0x08001a74       0x12 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001a74                Panel_Scan
- *fill*         0x08001a86        0x2 
+                0x08001a84       0x12 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001a84                Panel_Scan
+ *fill*         0x08001a96        0x2 
  .text.Panel_HandleEventPeripherals
-                0x08001a88      0x15c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001a88                Panel_HandleEventPeripherals
+                0x08001a98      0x168 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001a98                Panel_HandleEventPeripherals
  .text.Panel_CheckSystemFlag
-                0x08001be4       0xbc CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001be4                Panel_CheckSystemFlag
- .text.Panel_TryBoot
-                0x08001ca0       0x38 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001ca0                Panel_TryBoot
+                0x08001c00       0xbc CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001c00                Panel_CheckSystemFlag
  .text.Panel_LightGreenSolid
-                0x08001cd8       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001cd8                Panel_LightGreenSolid
+                0x08001cbc       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001cbc                Panel_LightGreenSolid
  .text.Panel_LightGreenFlash
-                0x08001d14       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001d14                Panel_LightGreenFlash
+                0x08001cf8       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001cf8                Panel_LightGreenFlash
  .text.Panel_LightYellowSolid
-                0x08001d50       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001d50                Panel_LightYellowSolid
+                0x08001d34       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001d34                Panel_LightYellowSolid
  .text.Panel_LightYellowFlash
-                0x08001d8c       0xac CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001d8c                Panel_LightYellowFlash
+                0x08001d70       0xac CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001d70                Panel_LightYellowFlash
  .text.Panel_LightRedSolid
-                0x08001e38       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001e38                Panel_LightRedSolid
+                0x08001e1c       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001e1c                Panel_LightRedSolid
  .text.Panel_LightRedFlash
-                0x08001e74       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001e74                Panel_LightRedFlash
+                0x08001e58       0x3c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001e58                Panel_LightRedFlash
  .text.Panel_LightOff
-                0x08001eb0       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001eb0                Panel_LightOff
+                0x08001e94       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001e94                Panel_LightOff
  .text.Panel_OnOff
-                0x08001f38       0x80 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001f38                Panel_OnOff
+                0x08001f1c        0xe CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001f1c                Panel_OnOff
+ *fill*         0x08001f2a        0x2 
+ .text.Panel_OnOffBegin
+                0x08001f2c       0x58 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001f2c                Panel_OnOffBegin
+ .text.Panel_OnOffEnd
+                0x08001f84       0x4c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001f84                Panel_OnOffEnd
  .text.HAL_I2C_SlaveTxCpltCallback
-                0x08001fb8       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001fb8                HAL_I2C_SlaveTxCpltCallback
+                0x08001fd0       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001fd0                HAL_I2C_SlaveTxCpltCallback
  .text.HAL_I2C_SlaveRxCpltCallback
-                0x08001fdc       0x10 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001fdc                HAL_I2C_SlaveRxCpltCallback
+                0x08001ff4       0x10 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08001ff4                HAL_I2C_SlaveRxCpltCallback
  .text.HAL_I2C_AddrCallback
-                0x08001fec       0x74 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08001fec                HAL_I2C_AddrCallback
+                0x08002004       0x74 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08002004                HAL_I2C_AddrCallback
  .text.HAL_I2C_ListenCpltCallback
-                0x08002060       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08002060                HAL_I2C_ListenCpltCallback
+                0x08002078       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08002078                HAL_I2C_ListenCpltCallback
  .text.HAL_I2C_ErrorCallback
-                0x08002084       0x38 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x08002084                HAL_I2C_ErrorCallback
+                0x0800209c       0x38 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x0800209c                HAL_I2C_ErrorCallback
  .text.Peripheral_ButtonInit
-                0x080020bc       0xb8 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x080020bc                Peripheral_ButtonInit
+                0x080020d4       0xb8 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x080020d4                Peripheral_ButtonInit
  .text.Peripheral_ButtonScan
-                0x08002174       0xc6 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x08002174                Peripheral_ButtonScan
- *fill*         0x0800223a        0x2 
+                0x0800218c       0xc6 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x0800218c                Peripheral_ButtonScan
+ *fill*         0x08002252        0x2 
  .text.Peripheral_ButtonExec
-                0x0800223c       0x54 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x0800223c                Peripheral_ButtonExec
+                0x08002254       0xa0 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x08002254                Peripheral_ButtonExec
  .text.Peripheral_EncoderInit
-                0x08002290       0x74 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x08002290                Peripheral_EncoderInit
+                0x080022f4       0x74 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x080022f4                Peripheral_EncoderInit
  .text.Peripheral_EncoderScan
-                0x08002304       0xe4 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x08002304                Peripheral_EncoderScan
+                0x08002368       0xe4 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x08002368                Peripheral_EncoderScan
  .text.Peripheral_EncoderExec
-                0x080023e8       0x54 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x080023e8                Peripheral_EncoderExec
+                0x0800244c       0x54 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x0800244c                Peripheral_EncoderExec
  .text.Peripheral_InitGroup
-                0x0800243c      0x11c CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x0800243c                Peripheral_InitGroup
+                0x080024a0      0x11c CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x080024a0                Peripheral_InitGroup
  .text.Peripheral_ScanGroup
-                0x08002558       0xec CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x08002558                Peripheral_ScanGroup
+                0x080025bc       0xec CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x080025bc                Peripheral_ScanGroup
  .text.HAL_MspInit
-                0x08002644       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
-                0x08002644                HAL_MspInit
+                0x080026a8       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+                0x080026a8                HAL_MspInit
  .text.NMI_Handler
-                0x0800268c        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x0800268c                NMI_Handler
+                0x080026f0        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x080026f0                NMI_Handler
  .text.HardFault_Handler
-                0x08002694        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x08002694                HardFault_Handler
+                0x080026f8        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x080026f8                HardFault_Handler
  .text.SVC_Handler
-                0x0800269c        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x0800269c                SVC_Handler
+                0x08002700        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x08002700                SVC_Handler
  .text.PendSV_Handler
-                0x080026a6        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x080026a6                PendSV_Handler
+                0x0800270a        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x0800270a                PendSV_Handler
  .text.SysTick_Handler
-                0x080026b0        0xe CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x080026b0                SysTick_Handler
- *fill*         0x080026be        0x2 
+                0x08002714        0xe CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x08002714                SysTick_Handler
+ *fill*         0x08002722        0x2 
  .text.TIM3_IRQHandler
-                0x080026c0       0x18 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x080026c0                TIM3_IRQHandler
+                0x08002724       0x18 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x08002724                TIM3_IRQHandler
  .text.TIM14_IRQHandler
-                0x080026d8       0x18 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x080026d8                TIM14_IRQHandler
+                0x0800273c       0x18 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x0800273c                TIM14_IRQHandler
  .text.I2C1_IRQHandler
-                0x080026f0       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
-                0x080026f0                I2C1_IRQHandler
- .text._sbrk    0x08002720       0x6c CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
-                0x08002720                _sbrk
+                0x08002754       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x08002754                I2C1_IRQHandler
+ .text._sbrk    0x08002784       0x6c CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+                0x08002784                _sbrk
  .text.SystemInit
-                0x0800278c        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
-                0x0800278c                SystemInit
- *fill*         0x08002796        0x2 
+                0x080027f0        0xa CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+                0x080027f0                SystemInit
+ *fill*         0x080027fa        0x2 
  .text.MX_TIM3_Init
-                0x08002798      0x114 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x08002798                MX_TIM3_Init
+                0x080027fc      0x114 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x080027fc                MX_TIM3_Init
  .text.MX_TIM14_Init
-                0x080028ac       0x4c CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x080028ac                MX_TIM14_Init
+                0x08002910       0x4c CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x08002910                MX_TIM14_Init
  .text.HAL_TIM_Base_MspInit
-                0x080028f8       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x080028f8                HAL_TIM_Base_MspInit
+                0x0800295c       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x0800295c                HAL_TIM_Base_MspInit
  .text.HAL_TIM_MspPostInit
-                0x08002980       0x80 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x08002980                HAL_TIM_MspPostInit
+                0x080029e4       0x80 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x080029e4                HAL_TIM_MspPostInit
  .text.timerInit
-                0x08002a00       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
-                0x08002a00                timerInit
+                0x08002a64       0x24 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x08002a64                timerInit
+ .text.timerEnable
+                0x08002a88       0x16 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x08002a88                timerEnable
  .text.timerDisable
-                0x08002a24       0x1c CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
-                0x08002a24                timerDisable
+                0x08002a9e       0x1c CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x08002a9e                timerDisable
+ .text.timerCountUp
+                0x08002aba       0x3a CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x08002aba                timerCountUp
+ .text.timerReset
+                0x08002af4       0x16 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x08002af4                timerReset
+ *fill*         0x08002b0a        0x2 
  .text.MX_USART1_UART_Init
-                0x08002a40       0x60 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
-                0x08002a40                MX_USART1_UART_Init
+                0x08002b0c       0x60 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+                0x08002b0c                MX_USART1_UART_Init
  .text.HAL_UART_MspInit
-                0x08002aa0       0x9c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
-                0x08002aa0                HAL_UART_MspInit
+                0x08002b6c       0x9c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+                0x08002b6c                HAL_UART_MspInit
  .text.HAL_I2C_Init
-                0x08002b3c      0x14c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08002b3c                HAL_I2C_Init
+                0x08002c08      0x14c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08002c08                HAL_I2C_Init
  .text.HAL_I2C_Slave_Seq_Transmit_IT
-                0x08002c88      0x180 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08002c88                HAL_I2C_Slave_Seq_Transmit_IT
+                0x08002d54      0x180 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08002d54                HAL_I2C_Slave_Seq_Transmit_IT
  .text.HAL_I2C_Slave_Seq_Receive_IT
-                0x08002e08      0x184 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08002e08                HAL_I2C_Slave_Seq_Receive_IT
+                0x08002ed4      0x184 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08002ed4                HAL_I2C_Slave_Seq_Receive_IT
  .text.HAL_I2C_EnableListen_IT
-                0x08002f8c       0x44 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08002f8c                HAL_I2C_EnableListen_IT
+                0x08003058       0x44 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003058                HAL_I2C_EnableListen_IT
  .text.HAL_I2C_EV_IRQHandler
-                0x08002fd0       0x34 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08002fd0                HAL_I2C_EV_IRQHandler
+                0x0800309c       0x34 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x0800309c                HAL_I2C_EV_IRQHandler
  .text.HAL_I2C_ER_IRQHandler
-                0x08003004       0xb2 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08003004                HAL_I2C_ER_IRQHandler
+                0x080030d0       0xb2 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080030d0                HAL_I2C_ER_IRQHandler
  .text.HAL_I2C_MasterTxCpltCallback
-                0x080030b6       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x080030b6                HAL_I2C_MasterTxCpltCallback
+                0x08003182       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003182                HAL_I2C_MasterTxCpltCallback
  .text.HAL_I2C_MasterRxCpltCallback
-                0x080030c6       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x080030c6                HAL_I2C_MasterRxCpltCallback
+                0x08003192       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003192                HAL_I2C_MasterRxCpltCallback
  .text.HAL_I2C_MemTxCpltCallback
-                0x080030d6       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x080030d6                HAL_I2C_MemTxCpltCallback
+                0x080031a2       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080031a2                HAL_I2C_MemTxCpltCallback
  .text.HAL_I2C_MemRxCpltCallback
-                0x080030e6       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x080030e6                HAL_I2C_MemRxCpltCallback
+                0x080031b2       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080031b2                HAL_I2C_MemRxCpltCallback
  .text.HAL_I2C_AbortCpltCallback
-                0x080030f6       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x080030f6                HAL_I2C_AbortCpltCallback
+                0x080031c2       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080031c2                HAL_I2C_AbortCpltCallback
  .text.HAL_I2C_GetError
-                0x08003106       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
-                0x08003106                HAL_I2C_GetError
- *fill*         0x0800311a        0x2 
+                0x080031d2       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080031d2                HAL_I2C_GetError
+ *fill*         0x080031e6        0x2 
  .text.I2C_Slave_ISR_IT
-                0x0800311c      0x200 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080031e8      0x200 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Master_ISR_DMA
-                0x0800331c      0x214 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080033e8      0x214 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Mem_ISR_DMA
-                0x08003530      0x294 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080035fc      0x294 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Slave_ISR_DMA
-                0x080037c4      0x1d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003890      0x1d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITAddrCplt
-                0x08003994      0x148 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003a60      0x148 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITMasterSeqCplt
-                0x08003adc       0x82 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- *fill*         0x08003b5e        0x2 
+                0x08003ba8       0x82 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ *fill*         0x08003c2a        0x2 
  .text.I2C_ITSlaveSeqCplt
-                0x08003b60       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003c2c       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITMasterCplt
-                0x08003c28      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003cf4      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITSlaveCplt
-                0x08003dc4      0x310 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08003e90      0x310 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITListenCplt
-                0x080040d4       0xb0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080041a0       0xb0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_ITError
-                0x08004184      0x204 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08004250      0x204 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_TreatErrorCallback
-                0x08004388       0x52 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08004454       0x52 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Flush_TXDR
-                0x080043da       0x44 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080044a6       0x44 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_DMAAbort
-                0x0800441e       0x3e CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x080044ea       0x3e CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_TransferConfig
-                0x0800445c       0x74 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x08004528       0x74 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Enable_IRQ
-                0x080044d0      0x114 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x0800459c      0x114 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .text.I2C_Disable_IRQ
-                0x080045e4       0xc6 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- *fill*         0x080046aa        0x2 
+                0x080046b0       0xc6 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ *fill*         0x08004776        0x2 
  .text.HAL_I2CEx_ConfigAnalogFilter
-                0x080046ac       0x98 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
-                0x080046ac                HAL_I2CEx_ConfigAnalogFilter
+                0x08004778       0x98 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+                0x08004778                HAL_I2CEx_ConfigAnalogFilter
  .text.HAL_I2CEx_ConfigDigitalFilter
-                0x08004744       0x98 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
-                0x08004744                HAL_I2CEx_ConfigDigitalFilter
+                0x08004810       0x98 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+                0x08004810                HAL_I2CEx_ConfigDigitalFilter
  .text.HAL_I2CEx_EnableFastModePlus
-                0x080047dc       0x3c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
-                0x080047dc                HAL_I2CEx_EnableFastModePlus
+                0x080048a8       0x3c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+                0x080048a8                HAL_I2CEx_EnableFastModePlus
  .text.HAL_RCC_OscConfig
-                0x08004818      0x634 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x08004818                HAL_RCC_OscConfig
+                0x080048e4      0x634 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x080048e4                HAL_RCC_OscConfig
  .text.HAL_RCC_ClockConfig
-                0x08004e4c      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x08004e4c                HAL_RCC_ClockConfig
+                0x08004f18      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x08004f18                HAL_RCC_ClockConfig
  .text.HAL_RCC_GetSysClockFreq
-                0x08004fe8       0xac CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x08004fe8                HAL_RCC_GetSysClockFreq
+                0x080050b4       0xac CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x080050b4                HAL_RCC_GetSysClockFreq
  .text.HAL_RCC_GetHCLKFreq
-                0x08005094       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x08005094                HAL_RCC_GetHCLKFreq
+                0x08005160       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x08005160                HAL_RCC_GetHCLKFreq
  .text.HAL_RCC_GetPCLK1Freq
-                0x080050a8       0x2c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x080050a8                HAL_RCC_GetPCLK1Freq
+                0x08005174       0x2c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x08005174                HAL_RCC_GetPCLK1Freq
  .text.HAL_RCCEx_PeriphCLKConfig
-                0x080050d4      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
-                0x080050d4                HAL_RCCEx_PeriphCLKConfig
+                0x080051a0      0x19c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+                0x080051a0                HAL_RCCEx_PeriphCLKConfig
  .text.HAL_Init
-                0x08005270       0x28 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x08005270                HAL_Init
+                0x0800533c       0x28 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x0800533c                HAL_Init
  .text.HAL_InitTick
-                0x08005298       0x68 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x08005298                HAL_InitTick
+                0x08005364       0x68 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x08005364                HAL_InitTick
  .text.HAL_IncTick
-                0x08005300       0x24 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x08005300                HAL_IncTick
+                0x080053cc       0x24 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x080053cc                HAL_IncTick
  .text.HAL_GetTick
-                0x08005324       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x08005324                HAL_GetTick
+                0x080053f0       0x14 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x080053f0                HAL_GetTick
  .text.HAL_Delay
-                0x08005338       0x48 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x08005338                HAL_Delay
+                0x08005404       0x48 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x08005404                HAL_Delay
  .text.HAL_GPIO_Init
-                0x08005380      0x2e0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
-                0x08005380                HAL_GPIO_Init
+                0x0800544c      0x2e0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+                0x0800544c                HAL_GPIO_Init
  .text.HAL_GPIO_ReadPin
-                0x08005660       0x3a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
-                0x08005660                HAL_GPIO_ReadPin
+                0x0800572c       0x3a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+                0x0800572c                HAL_GPIO_ReadPin
  .text.HAL_GPIO_WritePin
-                0x0800569a       0x3a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
-                0x0800569a                HAL_GPIO_WritePin
+                0x08005766       0x3a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+                0x08005766                HAL_GPIO_WritePin
  .text.HAL_DMA_Abort_IT
-                0x080056d4       0x8a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
-                0x080056d4                HAL_DMA_Abort_IT
+                0x080057a0       0x8a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+                0x080057a0                HAL_DMA_Abort_IT
  .text.HAL_DMA_GetState
-                0x0800575e       0x18 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
-                0x0800575e                HAL_DMA_GetState
- *fill*         0x08005776        0x2 
+                0x0800582a       0x18 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+                0x0800582a                HAL_DMA_GetState
+ *fill*         0x08005842        0x2 
  .text.__NVIC_EnableIRQ
-                0x08005778       0x34 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x08005844       0x34 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
  .text.__NVIC_SetPriority
-                0x080057ac       0xdc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x08005878       0xdc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
  .text.SysTick_Config
-                0x08005888       0x48 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x08005954       0x48 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
  .text.HAL_NVIC_SetPriority
-                0x080058d0       0x2a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
-                0x080058d0                HAL_NVIC_SetPriority
+                0x0800599c       0x2a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x0800599c                HAL_NVIC_SetPriority
  .text.HAL_NVIC_EnableIRQ
-                0x080058fa       0x20 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
-                0x080058fa                HAL_NVIC_EnableIRQ
+                0x080059c6       0x20 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x080059c6                HAL_NVIC_EnableIRQ
  .text.HAL_SYSTICK_Config
-                0x0800591a       0x1a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
-                0x0800591a                HAL_SYSTICK_Config
+                0x080059e6       0x1a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x080059e6                HAL_SYSTICK_Config
  .text.HAL_TIM_Base_Init
-                0x08005934       0xa0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005934                HAL_TIM_Base_Init
+                0x08005a00       0xa0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005a00                HAL_TIM_Base_Init
  .text.HAL_TIM_Base_Start_IT
-                0x080059d4       0x8c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x080059d4                HAL_TIM_Base_Start_IT
+                0x08005aa0       0x8c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005aa0                HAL_TIM_Base_Start_IT
  .text.HAL_TIM_PWM_Init
-                0x08005a60       0xa0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005a60                HAL_TIM_PWM_Init
+                0x08005b2c       0xa0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005b2c                HAL_TIM_PWM_Init
  .text.HAL_TIM_PWM_MspInit
-                0x08005b00       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005b00                HAL_TIM_PWM_MspInit
+                0x08005bcc       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005bcc                HAL_TIM_PWM_MspInit
  .text.HAL_TIM_PWM_Start
-                0x08005b10      0x14c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005b10                HAL_TIM_PWM_Start
+                0x08005bdc      0x14c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005bdc                HAL_TIM_PWM_Start
  .text.HAL_TIM_IRQHandler
-                0x08005c5c      0x1dc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005c5c                HAL_TIM_IRQHandler
+                0x08005d28      0x1dc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005d28                HAL_TIM_IRQHandler
  .text.HAL_TIM_PWM_ConfigChannel
-                0x08005e38      0x18c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005e38                HAL_TIM_PWM_ConfigChannel
+                0x08005f04      0x18c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08005f04                HAL_TIM_PWM_ConfigChannel
  .text.HAL_TIM_ConfigClockSource
-                0x08005fc4      0x1a8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08005fc4                HAL_TIM_ConfigClockSource
+                0x08006090      0x1a8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006090                HAL_TIM_ConfigClockSource
  .text.HAL_TIM_OC_DelayElapsedCallback
-                0x0800616c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x0800616c                HAL_TIM_OC_DelayElapsedCallback
+                0x08006238       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006238                HAL_TIM_OC_DelayElapsedCallback
  .text.HAL_TIM_IC_CaptureCallback
-                0x0800617c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x0800617c                HAL_TIM_IC_CaptureCallback
+                0x08006248       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006248                HAL_TIM_IC_CaptureCallback
  .text.HAL_TIM_PWM_PulseFinishedCallback
-                0x0800618c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x0800618c                HAL_TIM_PWM_PulseFinishedCallback
+                0x08006258       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006258                HAL_TIM_PWM_PulseFinishedCallback
  .text.HAL_TIM_TriggerCallback
-                0x0800619c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x0800619c                HAL_TIM_TriggerCallback
+                0x08006268       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006268                HAL_TIM_TriggerCallback
  .text.TIM_Base_SetConfig
-                0x080061ac       0xf4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x080061ac                TIM_Base_SetConfig
+                0x08006278       0xf4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006278                TIM_Base_SetConfig
  .text.TIM_OC1_SetConfig
-                0x080062a0       0xfc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x0800636c       0xfc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .text.TIM_OC2_SetConfig
-                0x0800639c       0xfc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x0800639c                TIM_OC2_SetConfig
+                0x08006468       0xfc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006468                TIM_OC2_SetConfig
  .text.TIM_OC3_SetConfig
-                0x08006498      0x100 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006564      0x100 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .text.TIM_OC4_SetConfig
-                0x08006598       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006664       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .text.TIM_TI1_ConfigInputStage
-                0x08006660       0x5c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x0800672c       0x5c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .text.TIM_TI2_ConfigInputStage
-                0x080066bc       0x64 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006788       0x64 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .text.TIM_ITRx_SetConfig
-                0x08006720       0x32 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
- *fill*         0x08006752        0x2 
+                0x080067ec       0x32 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ *fill*         0x0800681e        0x2 
  .text.TIM_ETR_SetConfig
-                0x08006754       0x40 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08006754                TIM_ETR_SetConfig
+                0x08006820       0x40 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006820                TIM_ETR_SetConfig
  .text.TIM_CCxChannelCmd
-                0x08006794       0x46 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
-                0x08006794                TIM_CCxChannelCmd
- *fill*         0x080067da        0x2 
+                0x08006860       0x46 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x08006860                TIM_CCxChannelCmd
+ *fill*         0x080068a6        0x2 
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x080067dc       0xa4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
-                0x080067dc                HAL_TIMEx_MasterConfigSynchronization
+                0x080068a8       0xa4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+                0x080068a8                HAL_TIMEx_MasterConfigSynchronization
  .text.HAL_TIMEx_CommutCallback
-                0x08006880       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
-                0x08006880                HAL_TIMEx_CommutCallback
+                0x0800694c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+                0x0800694c                HAL_TIMEx_CommutCallback
  .text.HAL_TIMEx_BreakCallback
-                0x08006890       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
-                0x08006890                HAL_TIMEx_BreakCallback
+                0x0800695c       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+                0x0800695c                HAL_TIMEx_BreakCallback
  .text.HAL_UART_Init
-                0x080068a0       0xa8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
-                0x080068a0                HAL_UART_Init
+                0x0800696c       0xa8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x0800696c                HAL_UART_Init
  .text.UART_SetConfig
-                0x08006948      0x250 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
-                0x08006948                UART_SetConfig
+                0x08006a14      0x250 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x08006a14                UART_SetConfig
  .text.UART_AdvFeatureConfig
-                0x08006b98      0x168 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
-                0x08006b98                UART_AdvFeatureConfig
+                0x08006c64      0x168 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x08006c64                UART_AdvFeatureConfig
  .text.UART_CheckIdleState
-                0x08006d00      0x150 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
-                0x08006d00                UART_CheckIdleState
+                0x08006dcc      0x150 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x08006dcc                UART_CheckIdleState
  .text.UART_WaitOnFlagUntilTimeout
-                0x08006e50       0xde CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
-                0x08006e50                UART_WaitOnFlagUntilTimeout
- *fill*         0x08006f2e        0x2 
+                0x08006f1c       0xde CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x08006f1c                UART_WaitOnFlagUntilTimeout
+ *fill*         0x08006ffa        0x2 
  .text.UART_EndRxTransfer
-                0x08006f30       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x08006ffc       0xc8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
  .text.Reset_Handler
-                0x08006ff8       0x50 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
-                0x08006ff8                Reset_Handler
+                0x080070c4       0x50 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+                0x080070c4                Reset_Handler
  .text.Default_Handler
-                0x08007048        0x2 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
-                0x08007048                TIM1_CC_IRQHandler
-                0x08007048                SPI1_IRQHandler
-                0x08007048                EXTI2_3_IRQHandler
-                0x08007048                ADC1_IRQHandler
-                0x08007048                TIM17_IRQHandler
-                0x08007048                RTC_IRQHandler
-                0x08007048                TIM16_IRQHandler
-                0x08007048                EXTI4_15_IRQHandler
-                0x08007048                RCC_IRQHandler
-                0x08007048                DMA1_Channel1_IRQHandler
-                0x08007048                Default_Handler
-                0x08007048                DMA1_Channel4_5_IRQHandler
-                0x08007048                EXTI0_1_IRQHandler
-                0x08007048                WWDG_IRQHandler
-                0x08007048                DMA1_Channel2_3_IRQHandler
-                0x08007048                FLASH_IRQHandler
-                0x08007048                USART1_IRQHandler
-                0x08007048                TIM1_BRK_UP_TRG_COM_IRQHandler
- *fill*         0x0800704a        0x2 
- .text.malloc   0x0800704c       0x14 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
-                0x0800704c                malloc
- .text.__errno  0x08007060        0xc C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
-                0x08007060                __errno
+                0x08007114        0x2 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+                0x08007114                TIM1_CC_IRQHandler
+                0x08007114                SPI1_IRQHandler
+                0x08007114                EXTI2_3_IRQHandler
+                0x08007114                ADC1_IRQHandler
+                0x08007114                TIM17_IRQHandler
+                0x08007114                RTC_IRQHandler
+                0x08007114                TIM16_IRQHandler
+                0x08007114                EXTI4_15_IRQHandler
+                0x08007114                RCC_IRQHandler
+                0x08007114                DMA1_Channel1_IRQHandler
+                0x08007114                Default_Handler
+                0x08007114                DMA1_Channel4_5_IRQHandler
+                0x08007114                EXTI0_1_IRQHandler
+                0x08007114                WWDG_IRQHandler
+                0x08007114                DMA1_Channel2_3_IRQHandler
+                0x08007114                FLASH_IRQHandler
+                0x08007114                USART1_IRQHandler
+                0x08007114                TIM1_BRK_UP_TRG_COM_IRQHandler
+ *fill*         0x08007116        0x2 
+ .text.malloc   0x08007118       0x14 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+                0x08007118                malloc
+ .text.__errno  0x0800712c        0xc C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+                0x0800712c                __errno
  *(.glue_7)
- .glue_7        0x0800706c        0x0 linker stubs
+ .glue_7        0x08007138        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800706c        0x0 linker stubs
+ .glue_7t       0x08007138        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800706c        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+ .eh_frame      0x08007138        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
  *(.init)
- .init          0x0800706c        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
-                0x0800706c                _init
- .init          0x08007070        0x8 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o
+ .init          0x08007138        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
+                0x08007138                _init
+ .init          0x0800713c        0x8 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o
  *(.fini)
- .fini          0x08007078        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
-                0x08007078                _fini
- .fini          0x0800707c        0x8 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o
-                0x08007084                        . = ALIGN (0x4)
-                0x08007084                        _etext = .
+ .fini          0x08007144        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crti.o
+                0x08007144                _fini
+ .fini          0x08007148        0x8 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtn.o
+                0x08007150                        . = ALIGN (0x4)
+                0x08007150                        _etext = .
 
-.vfp11_veneer   0x08007084        0x0
- .vfp11_veneer  0x08007084        0x0 linker stubs
+.vfp11_veneer   0x08007150        0x0
+ .vfp11_veneer  0x08007150        0x0 linker stubs
 
-.v4_bx          0x08007084        0x0
- .v4_bx         0x08007084        0x0 linker stubs
+.v4_bx          0x08007150        0x0
+ .v4_bx         0x08007150        0x0 linker stubs
 
-.iplt           0x08007084        0x0
- .iplt          0x08007084        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+.iplt           0x08007150        0x0
+ .iplt          0x08007150        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
-.rodata         0x08007084      0x10c
-                0x08007084                        . = ALIGN (0x4)
+.rodata         0x08007150      0x114
+                0x08007150                        . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x08007084       0x7c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divsf3.o)
+ .rodata        0x08007150       0x7c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divsf3.o)
  *(.rodata*)
  .rodata.Panel_HandleEventPeripherals
-                0x08007100       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x080071cc       0x34 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
  .rodata.Panel_CheckSystemFlag
-                0x08007130       0x28 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x08007200       0x2c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
  .rodata.AHBPrescTable
-                0x08007158       0x10 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
-                0x08007158                AHBPrescTable
+                0x0800722c       0x10 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+                0x0800722c                AHBPrescTable
  .rodata.APBPrescTable
-                0x08007168        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
-                0x08007168                APBPrescTable
+                0x0800723c        0x8 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+                0x0800723c                APBPrescTable
  .rodata.aPLLMULFactorTable.1
-                0x08007170       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x08007244       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
  .rodata.aPredivFactorTable.0
-                0x08007180       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
-                0x08007190                        . = ALIGN (0x4)
+                0x08007254       0x10 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x08007264                        . = ALIGN (0x4)
 
-.rel.dyn        0x08007190        0x0
- .rel.iplt      0x08007190        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+.rel.dyn        0x08007264        0x0
+ .rel.iplt      0x08007264        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08007190        0x0
-                0x08007190                        __exidx_start = .
+.ARM            0x08007264        0x0
+                0x08007264                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08007190                        __exidx_end = .
+                0x08007264                        __exidx_end = .
 
-.preinit_array  0x08007190        0x0
-                0x08007190                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08007264        0x0
+                0x08007264                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08007190                        PROVIDE (__preinit_array_end = .)
+                0x08007264                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08007190        0x4
-                0x08007190                        PROVIDE (__init_array_start = .)
+.init_array     0x08007264        0x4
+                0x08007264                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08007190        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
-                0x08007194                        PROVIDE (__init_array_end = .)
+ .init_array    0x08007264        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+                0x08007268                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08007194        0x4
+.fini_array     0x08007268        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08007194        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
+ .fini_array    0x08007268        0x4 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08007198                        _sidata = LOADADDR (.data)
+                0x0800726c                        _sidata = LOADADDR (.data)
 
-.data           0x20000000       0x80 load address 0x08007198
+.data           0x20000000       0x80 load address 0x0800726c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -4503,11 +4511,11 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  *fill*         0x2000007d        0x3 
                 0x20000080                        _edata = .
 
-.igot.plt       0x20000080        0x0 load address 0x08007218
+.igot.plt       0x20000080        0x0 load address 0x080072ec
  .igot.plt      0x20000080        0x0 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp/crtbegin.o
                 0x20000080                        . = ALIGN (0x4)
 
-.bss            0x20000080      0x330 load address 0x08007218
+.bss            0x20000080      0x35c load address 0x080072ec
                 0x20000080                        _sbss = .
                 0x20000080                        __bss_start__ = _sbss
  *(.bss)
@@ -4555,51 +4563,64 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .bss.systemState
                 0x20000282        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
                 0x20000282                systemState
- .bss.systemFlag
+ .bss.systemStatePrev
                 0x20000283        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x20000283                systemFlag
- .bss.systemFlagPrev
+                0x20000283                systemStatePrev
+ .bss.systemFlag
                 0x20000284        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x20000284                systemFlagPrev
- .bss.yellowSyncComplete
+                0x20000284                systemFlag
+ .bss.systemFlagPrev
                 0x20000285        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x20000285                yellowSyncComplete
- .bss.tryBoot   0x20000286        0x2 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                0x20000286                tryBoot
+                0x20000285                systemFlagPrev
+ .bss.PanelOnOffTrigger
+                0x20000286        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x20000286                PanelOnOffTrigger
+ *fill*         0x20000287        0x1 
+ .bss.timerPanelOnOff
+                0x20000288       0x14 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x20000288                timerPanelOnOff
+ .bss.GPIO_InitStruct
+                0x2000029c       0x14 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x2000029c                GPIO_InitStruct
+ .bss.yellowSyncComplete
+                0x200002b0        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x200002b0                yellowSyncComplete
+ *fill*         0x200002b1        0x3 
  .bss.peripheralGroup
-                0x20000288        0x4 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x20000288                peripheralGroup
+                0x200002b4        0x4 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x200002b4                peripheralGroup
  .bss.peripheralEvent
-                0x2000028c        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x2000028c                peripheralEvent
- .bss.enc_read  0x2000028d        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                0x2000028d                enc_read
- *fill*         0x2000028e        0x2 
+                0x200002b8        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x200002b8                peripheralEvent
+ .bss.enc_read  0x200002b9        0x1 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x200002b9                enc_read
+ *fill*         0x200002ba        0x2 
  .bss.__sbrk_heap_end
-                0x20000290        0x4 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
- .bss.htim3     0x20000294       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x20000294                htim3
- .bss.htim14    0x200002dc       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
-                0x200002dc                htim14
- .bss.huart1    0x20000324       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
-                0x20000324                huart1
- .bss.uwTick    0x200003ac        0x4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
-                0x200003ac                uwTick
+                0x200002bc        0x4 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .bss.htim3     0x200002c0       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x200002c0                htim3
+ .bss.htim14    0x20000308       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x20000308                htim14
+ .bss.huart1    0x20000350       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+                0x20000350                huart1
+ .bss.uwTick    0x200003d8        0x4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x200003d8                uwTick
  *(COMMON)
-                0x200003b0                        . = ALIGN (0x4)
-                0x200003b0                        _ebss = .
-                0x200003b0                        __bss_end__ = _ebss
+                0x200003dc                        . = ALIGN (0x4)
+                0x200003dc                        _ebss = .
+                0x200003dc                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200003b0      0x600 load address 0x08007218
-                0x200003b0                        . = ALIGN (0x8)
+                0x200003dc      0x604 load address 0x080072ec
+                0x200003e0                        . = ALIGN (0x8)
+ *fill*         0x200003dc        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x200003b0                        PROVIDE (_end = .)
-                0x200005b0                        . = (. + _Min_Heap_Size)
- *fill*         0x200003b0      0x200 
-                0x200009b0                        . = (. + _Min_Stack_Size)
- *fill*         0x200005b0      0x400 
-                0x200009b0                        . = ALIGN (0x8)
+                0x200003e0                        PROVIDE (_end = .)
+                0x200005e0                        . = (. + _Min_Heap_Size)
+ *fill*         0x200003e0      0x200 
+                0x200009e0                        . = (. + _Min_Stack_Size)
+ *fill*         0x200005e0      0x400 
+                0x200009e0                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -4723,7 +4744,7 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
 LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libm.a
 LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a
 
-.debug_frame    0x00000000     0x4020
+.debug_frame    0x00000000     0x4038
  .debug_frame   0x00000000      0x138 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-findfp.o)
  .debug_frame   0x00000138       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-memset.o)
  .debug_frame   0x00000158       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libc_nano.a(libc_a-reent.o)
@@ -4736,100 +4757,100 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_frame   0x0000034c       0x6c CMakeFiles/lvipanel_firmware.dir/Core/Src/i2c.c.obj
  .debug_frame   0x000003b8       0xf0 CMakeFiles/lvipanel_firmware.dir/Core/Src/lights.c.obj
  .debug_frame   0x000004a8       0x88 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
- .debug_frame   0x00000530      0x240 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
- .debug_frame   0x00000770      0x114 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
- .debug_frame   0x00000884       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
- .debug_frame   0x000008b4       0xf0 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
- .debug_frame   0x000009a4       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
- .debug_frame   0x000009d4       0x4c CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
- .debug_frame   0x00000a20       0xac CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
- .debug_frame   0x00000acc       0xd0 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .debug_frame   0x00000b9c       0x6c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
- .debug_frame   0x00000c08      0xa68 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- .debug_frame   0x00001670       0x90 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
- .debug_frame   0x00001700      0x198 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
- .debug_frame   0x00001898       0x70 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
- .debug_frame   0x00001908      0x2a4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
- .debug_frame   0x00001bac      0x110 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
- .debug_frame   0x00001cbc      0x1d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
- .debug_frame   0x00001e8c      0x2a0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
- .debug_frame   0x0000212c      0xf00 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
- .debug_frame   0x0000302c      0x560 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
- .debug_frame   0x0000358c      0x810 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
- .debug_frame   0x00003d9c       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
- .debug_frame   0x00003dbc       0x28 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_fixunssfsi.o)
- .debug_frame   0x00003de4       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(addsf3.o)
- .debug_frame   0x00003e1c       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divsf3.o)
- .debug_frame   0x00003e54       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(eqsf2.o)
- .debug_frame   0x00003e80       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(gesf2.o)
- .debug_frame   0x00003eac       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(lesf2.o)
- .debug_frame   0x00003ed8       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(mulsf3.o)
- .debug_frame   0x00003f10       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(subsf3.o)
- .debug_frame   0x00003f48       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(fixsfsi.o)
- .debug_frame   0x00003f68       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatsisf.o)
- .debug_frame   0x00003f94       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatunsisf.o)
- .debug_frame   0x00003fc0       0x40 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
- .debug_frame   0x00004000       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+ .debug_frame   0x00000530      0x258 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+ .debug_frame   0x00000788      0x114 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+ .debug_frame   0x0000089c       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+ .debug_frame   0x000008cc       0xf0 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+ .debug_frame   0x000009bc       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .debug_frame   0x000009ec       0x4c CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+ .debug_frame   0x00000a38       0xac CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+ .debug_frame   0x00000ae4       0xd0 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+ .debug_frame   0x00000bb4       0x6c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+ .debug_frame   0x00000c20      0xa68 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ .debug_frame   0x00001688       0x90 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+ .debug_frame   0x00001718      0x198 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+ .debug_frame   0x000018b0       0x70 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+ .debug_frame   0x00001920      0x2a4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+ .debug_frame   0x00001bc4      0x110 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+ .debug_frame   0x00001cd4      0x1d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+ .debug_frame   0x00001ea4      0x2a0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+ .debug_frame   0x00002144      0xf00 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ .debug_frame   0x00003044      0x560 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+ .debug_frame   0x000035a4      0x810 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+ .debug_frame   0x00003db4       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_udivsi3.o)
+ .debug_frame   0x00003dd4       0x28 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(_fixunssfsi.o)
+ .debug_frame   0x00003dfc       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(addsf3.o)
+ .debug_frame   0x00003e34       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(divsf3.o)
+ .debug_frame   0x00003e6c       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(eqsf2.o)
+ .debug_frame   0x00003e98       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(gesf2.o)
+ .debug_frame   0x00003ec4       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(lesf2.o)
+ .debug_frame   0x00003ef0       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(mulsf3.o)
+ .debug_frame   0x00003f28       0x38 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(subsf3.o)
+ .debug_frame   0x00003f60       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(fixsfsi.o)
+ .debug_frame   0x00003f80       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatsisf.o)
+ .debug_frame   0x00003fac       0x2c C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v6-m/nofp\libgcc.a(floatunsisf.o)
+ .debug_frame   0x00003fd8       0x40 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+ .debug_frame   0x00004018       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
-.debug_info     0x00000000    0x13b17
+.debug_info     0x00000000    0x13bfc
  .debug_info    0x00000000      0x325 CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
  .debug_info    0x00000325      0xa33 CMakeFiles/lvipanel_firmware.dir/Core/Src/i2c.c.obj
  .debug_info    0x00000d58      0x880 CMakeFiles/lvipanel_firmware.dir/Core/Src/lights.c.obj
  .debug_info    0x000015d8      0xe21 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
- .debug_info    0x000023f9     0x12dc CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
- .debug_info    0x000036d5      0x8c7 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
- .debug_info    0x00003f9c      0x199 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
- .debug_info    0x00004135      0x9dd CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
- .debug_info    0x00004b12      0x168 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
- .debug_info    0x00004c7a      0x242 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
- .debug_info    0x00004ebc      0xbd8 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
- .debug_info    0x00005a94      0x2b8 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .debug_info    0x00005d4c      0x92e CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
- .debug_info    0x0000667a     0x20cd CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- .debug_info    0x00008747      0x7e1 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
- .debug_info    0x00008f28      0x844 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
- .debug_info    0x0000976c      0x35d CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
- .debug_info    0x00009ac9      0x652 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
- .debug_info    0x0000a11b      0x5c8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
- .debug_info    0x0000a6e3      0x700 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
- .debug_info    0x0000ade3      0x67d CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
- .debug_info    0x0000b460     0x2946 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
- .debug_info    0x0000dda6     0x1488 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
- .debug_info    0x0000f22e     0x3a2a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
- .debug_info    0x00012c58       0x30 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
- .debug_info    0x00012c88      0x794 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
- .debug_info    0x0001341c      0x6fb C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+ .debug_info    0x000023f9     0x138b CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+ .debug_info    0x00003784      0x8fd CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+ .debug_info    0x00004081      0x199 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+ .debug_info    0x0000421a      0x9dd CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+ .debug_info    0x00004bf7      0x168 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .debug_info    0x00004d5f      0x242 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+ .debug_info    0x00004fa1      0xbd8 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+ .debug_info    0x00005b79      0x2b8 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+ .debug_info    0x00005e31      0x92e CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+ .debug_info    0x0000675f     0x20cd CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ .debug_info    0x0000882c      0x7e1 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+ .debug_info    0x0000900d      0x844 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+ .debug_info    0x00009851      0x35d CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+ .debug_info    0x00009bae      0x652 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+ .debug_info    0x0000a200      0x5c8 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+ .debug_info    0x0000a7c8      0x700 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+ .debug_info    0x0000aec8      0x67d CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+ .debug_info    0x0000b545     0x2946 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ .debug_info    0x0000de8b     0x1488 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+ .debug_info    0x0000f313     0x3a2a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+ .debug_info    0x00012d3d       0x30 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+ .debug_info    0x00012d6d      0x794 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+ .debug_info    0x00013501      0x6fb C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
-.debug_abbrev   0x00000000     0x32ce
+.debug_abbrev   0x00000000     0x3316
  .debug_abbrev  0x00000000      0x14d CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
  .debug_abbrev  0x0000014d      0x235 CMakeFiles/lvipanel_firmware.dir/Core/Src/i2c.c.obj
  .debug_abbrev  0x00000382      0x1f2 CMakeFiles/lvipanel_firmware.dir/Core/Src/lights.c.obj
  .debug_abbrev  0x00000574      0x27a CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
- .debug_abbrev  0x000007ee      0x304 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
- .debug_abbrev  0x00000af2      0x227 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
- .debug_abbrev  0x00000d19       0xc6 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
- .debug_abbrev  0x00000ddf      0x1b5 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
- .debug_abbrev  0x00000f94       0xbc CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
- .debug_abbrev  0x00001050      0x11c CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
- .debug_abbrev  0x0000116c      0x25d CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
- .debug_abbrev  0x000013c9      0x108 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .debug_abbrev  0x000014d1      0x1f6 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
- .debug_abbrev  0x000016c7      0x270 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- .debug_abbrev  0x00001937      0x1d4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
- .debug_abbrev  0x00001b0b      0x28b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
- .debug_abbrev  0x00001d96      0x16f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
- .debug_abbrev  0x00001f05      0x24b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
- .debug_abbrev  0x00002150      0x1c6 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
- .debug_abbrev  0x00002316      0x1ef CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
- .debug_abbrev  0x00002505      0x28c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
- .debug_abbrev  0x00002791      0x28c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
- .debug_abbrev  0x00002a1d      0x297 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
- .debug_abbrev  0x00002cb4      0x2cc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
- .debug_abbrev  0x00002f80       0x24 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
- .debug_abbrev  0x00002fa4      0x1cc C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
- .debug_abbrev  0x00003170      0x15e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+ .debug_abbrev  0x000007ee      0x34c CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+ .debug_abbrev  0x00000b3a      0x227 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+ .debug_abbrev  0x00000d61       0xc6 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+ .debug_abbrev  0x00000e27      0x1b5 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+ .debug_abbrev  0x00000fdc       0xbc CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .debug_abbrev  0x00001098      0x11c CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+ .debug_abbrev  0x000011b4      0x25d CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+ .debug_abbrev  0x00001411      0x108 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+ .debug_abbrev  0x00001519      0x1f6 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+ .debug_abbrev  0x0000170f      0x270 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ .debug_abbrev  0x0000197f      0x1d4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+ .debug_abbrev  0x00001b53      0x28b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+ .debug_abbrev  0x00001dde      0x16f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+ .debug_abbrev  0x00001f4d      0x24b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+ .debug_abbrev  0x00002198      0x1c6 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+ .debug_abbrev  0x0000235e      0x1ef CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+ .debug_abbrev  0x0000254d      0x28c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+ .debug_abbrev  0x000027d9      0x28c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ .debug_abbrev  0x00002a65      0x297 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+ .debug_abbrev  0x00002cfc      0x2cc CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+ .debug_abbrev  0x00002fc8       0x24 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+ .debug_abbrev  0x00002fec      0x1cc C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+ .debug_abbrev  0x000031b8      0x15e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
-.debug_aranges  0x00000000     0x1108
+.debug_aranges  0x00000000     0x1110
  .debug_aranges
                 0x00000000       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
  .debug_aranges
@@ -4839,54 +4860,54 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_aranges
                 0x000000a0       0x38 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
  .debug_aranges
-                0x000000d8       0xa8 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x000000d8       0xb0 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
  .debug_aranges
-                0x00000180       0x58 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x00000188       0x58 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
  .debug_aranges
-                0x000001d8       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+                0x000001e0       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
  .debug_aranges
-                0x000001f8       0x58 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x00000200       0x58 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
  .debug_aranges
-                0x00000250       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+                0x00000258       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
  .debug_aranges
-                0x00000270       0x28 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+                0x00000278       0x28 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
  .debug_aranges
-                0x00000298       0x40 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x000002a0       0x40 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
  .debug_aranges
-                0x000002d8       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x000002e0       0x48 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .debug_aranges
-                0x00000320       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+                0x00000328       0x30 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
  .debug_aranges
-                0x00000350      0x2a0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x00000358      0x2a0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .debug_aranges
-                0x000005f0       0x38 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+                0x000005f8       0x38 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
  .debug_aranges
-                0x00000628       0x80 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x00000630       0x80 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
  .debug_aranges
-                0x000006a8       0x30 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+                0x000006b0       0x30 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
  .debug_aranges
-                0x000006d8       0xd0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x000006e0       0xd0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
  .debug_aranges
-                0x000007a8       0x58 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+                0x000007b0       0x58 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
  .debug_aranges
-                0x00000800       0x88 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+                0x00000808       0x88 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
  .debug_aranges
-                0x00000888       0xc0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x00000890       0xc0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
  .debug_aranges
-                0x00000948      0x3d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x00000950      0x3d0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .debug_aranges
-                0x00000d18      0x168 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+                0x00000d20      0x168 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
  .debug_aranges
-                0x00000e80      0x218 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x00000e88      0x218 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
  .debug_aranges
-                0x00001098       0x28 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+                0x000010a0       0x28 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
  .debug_aranges
-                0x000010c0       0x28 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+                0x000010c8       0x28 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
  .debug_aranges
-                0x000010e8       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+                0x000010f0       0x20 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
 .debug_rnglists
-                0x00000000      0xd60
+                0x00000000      0xd66
  .debug_rnglists
                 0x00000000       0x14 CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
  .debug_rnglists
@@ -4896,51 +4917,51 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_rnglists
                 0x00000070       0x27 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
  .debug_rnglists
-                0x00000097       0x7f CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                0x00000097       0x84 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
  .debug_rnglists
-                0x00000116       0x5c CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                0x0000011b       0x5d CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
  .debug_rnglists
-                0x00000172       0x13 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+                0x00000178       0x13 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
  .debug_rnglists
-                0x00000185       0x3d CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+                0x0000018b       0x3d CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
  .debug_rnglists
-                0x000001c2       0x13 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+                0x000001c8       0x13 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
  .debug_rnglists
-                0x000001d5       0x1a CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+                0x000001db       0x1a CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
  .debug_rnglists
-                0x000001ef       0x2e CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+                0x000001f5       0x2e CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
  .debug_rnglists
-                0x0000021d       0x31 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+                0x00000223       0x31 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
  .debug_rnglists
-                0x0000024e       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+                0x00000254       0x20 CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
  .debug_rnglists
-                0x0000026e      0x229 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+                0x00000274      0x229 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
  .debug_rnglists
-                0x00000497       0x27 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+                0x0000049d       0x27 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
  .debug_rnglists
-                0x000004be       0x61 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+                0x000004c4       0x61 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
  .debug_rnglists
-                0x0000051f       0x21 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+                0x00000525       0x21 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
  .debug_rnglists
-                0x00000540       0x97 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+                0x00000546       0x97 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
  .debug_rnglists
-                0x000005d7       0x3f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+                0x000005dd       0x3f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
  .debug_rnglists
-                0x00000616       0x6a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+                0x0000061c       0x6a CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
  .debug_rnglists
-                0x00000680       0x8c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+                0x00000686       0x8c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
  .debug_rnglists
-                0x0000070c      0x31b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+                0x00000712      0x31b CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
  .debug_rnglists
-                0x00000a27      0x126 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+                0x00000a2d      0x126 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
  .debug_rnglists
-                0x00000b4d      0x1ce CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+                0x00000b53      0x1ce CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
  .debug_rnglists
-                0x00000d1b       0x19 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+                0x00000d21       0x19 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
  .debug_rnglists
-                0x00000d34       0x19 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+                0x00000d3a       0x19 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
  .debug_rnglists
-                0x00000d4d       0x13 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+                0x00000d53       0x13 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
 .debug_macro    0x00000000    0x11e02
  .debug_macro   0x00000000      0x1da CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
@@ -5038,89 +5059,89 @@ LOAD C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/
  .debug_macro   0x00011a63      0x1c1 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
  .debug_macro   0x00011c24      0x1de CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
 
-.debug_line     0x00000000    0x16ff9
+.debug_line     0x00000000    0x17028
  .debug_line    0x00000000      0x75e CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
  .debug_line    0x0000075e      0x7be CMakeFiles/lvipanel_firmware.dir/Core/Src/i2c.c.obj
  .debug_line    0x00000f1c      0x947 CMakeFiles/lvipanel_firmware.dir/Core/Src/lights.c.obj
- .debug_line    0x00001863      0x979 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
- .debug_line    0x000021dc      0xbd6 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
- .debug_line    0x00002db2      0xb75 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
- .debug_line    0x00003927      0x73d CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
- .debug_line    0x00004064      0x7fb CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
- .debug_line    0x0000485f      0x34a CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
- .debug_line    0x00004ba9      0x7ac CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
- .debug_line    0x00005355      0x859 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
- .debug_line    0x00005bae      0x7c7 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
- .debug_line    0x00006375      0x7ac CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
- .debug_line    0x00006b21     0x3a71 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
- .debug_line    0x0000a592      0x878 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
- .debug_line    0x0000ae0a      0xd9c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
- .debug_line    0x0000bba6      0x913 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
- .debug_line    0x0000c4b9      0x9b7 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
- .debug_line    0x0000ce70      0xb50 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
- .debug_line    0x0000d9c0      0xcdb CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
- .debug_line    0x0000e69b      0xa63 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
- .debug_line    0x0000f0fe     0x3674 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
- .debug_line    0x00012772     0x18dd CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
- .debug_line    0x0001404f     0x2b91 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
- .debug_line    0x00016be0       0x7b CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
- .debug_line    0x00016c5b      0x210 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
- .debug_line    0x00016e6b      0x18e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+ .debug_line    0x00001863      0x97b CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
+ .debug_line    0x000021de      0xbe6 CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+ .debug_line    0x00002dc4      0xb92 CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+ .debug_line    0x00003956      0x73d CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+ .debug_line    0x00004093      0x7fb CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+ .debug_line    0x0000488e      0x34a CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x00004bd8      0x7ac CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+ .debug_line    0x00005384      0x859 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+ .debug_line    0x00005bdd      0x7c7 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+ .debug_line    0x000063a4      0x7ac CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+ .debug_line    0x00006b50     0x3a71 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ .debug_line    0x0000a5c1      0x878 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+ .debug_line    0x0000ae39      0xd9c CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+ .debug_line    0x0000bbd5      0x913 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+ .debug_line    0x0000c4e8      0x9b7 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+ .debug_line    0x0000ce9f      0xb50 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+ .debug_line    0x0000d9ef      0xcdb CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+ .debug_line    0x0000e6ca      0xa63 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+ .debug_line    0x0000f12d     0x3674 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ .debug_line    0x000127a1     0x18dd CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+ .debug_line    0x0001407e     0x2b91 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+ .debug_line    0x00016c0f       0x7b CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+ .debug_line    0x00016c8a      0x210 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+ .debug_line    0x00016e9a      0x18e C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
 
-.debug_str      0x00000000    0x66b2e
+.debug_str      0x00000000    0x66b6b
  .debug_str     0x00000000    0x5d229 CMakeFiles/lvipanel_firmware.dir/Core/Src/gpio.c.obj
                               0x5d4a8 (size before relaxing)
  .debug_str     0x0005d229      0x647 CMakeFiles/lvipanel_firmware.dir/Core/Src/i2c.c.obj
                               0x5db90 (size before relaxing)
  .debug_str     0x0005d870      0x42b CMakeFiles/lvipanel_firmware.dir/Core/Src/lights.c.obj
                               0x5da0e (size before relaxing)
- .debug_str     0x0005dc9b     0x3b20 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
-                              0x616f0 (size before relaxing)
- .debug_str     0x000617bb      0x91e CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
-                              0x61e5b (size before relaxing)
- .debug_str     0x000620d9      0x45b CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
-                              0x6102b (size before relaxing)
- .debug_str     0x00062534       0x59 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
+ .debug_str     0x0005dc9b     0x3b21 CMakeFiles/lvipanel_firmware.dir/Core/Src/main.c.obj
+                              0x616f1 (size before relaxing)
+ .debug_str     0x000617bc      0x98a CMakeFiles/lvipanel_firmware.dir/Core/Src/panel.c.obj
+                              0x61ec8 (size before relaxing)
+ .debug_str     0x00062146      0x44f CMakeFiles/lvipanel_firmware.dir/Core/Src/peripherals.c.obj
+                              0x61050 (size before relaxing)
+ .debug_str     0x00062595       0x59 CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_hal_msp.c.obj
                               0x5d3dd (size before relaxing)
- .debug_str     0x0006258d      0x11f CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
+ .debug_str     0x000625ee      0x11f CMakeFiles/lvipanel_firmware.dir/Core/Src/stm32f0xx_it.c.obj
                               0x5dbf5 (size before relaxing)
- .debug_str     0x000626ac      0x509 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
+ .debug_str     0x0006270d      0x509 CMakeFiles/lvipanel_firmware.dir/Core/Src/sysmem.c.obj
                                0x59f0 (size before relaxing)
- .debug_str     0x00062bb5       0xb8 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
+ .debug_str     0x00062c16       0xb8 CMakeFiles/lvipanel_firmware.dir/Core/Src/system_stm32f0xx.c.obj
                               0x5d18b (size before relaxing)
- .debug_str     0x00062c6d      0x217 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
+ .debug_str     0x00062cce      0x217 CMakeFiles/lvipanel_firmware.dir/Core/Src/tim.c.obj
                               0x5dd05 (size before relaxing)
- .debug_str     0x00062e84       0x74 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
+ .debug_str     0x00062ee5       0x50 CMakeFiles/lvipanel_firmware.dir/Core/Src/timer.c.obj
                               0x5d19c (size before relaxing)
- .debug_str     0x00062ef8      0x29c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
+ .debug_str     0x00062f35      0x29c CMakeFiles/lvipanel_firmware.dir/Core/Src/usart.c.obj
                               0x5d930 (size before relaxing)
- .debug_str     0x00063194      0xdc7 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
+ .debug_str     0x000631d1      0xdc7 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c.obj
                               0x5e4e9 (size before relaxing)
- .debug_str     0x00063f5b       0xb5 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
+ .debug_str     0x00063f98       0xb5 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c.obj
                               0x5d6ba (size before relaxing)
- .debug_str     0x00064010      0x26f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
+ .debug_str     0x0006404d      0x26f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c.obj
                               0x5d5c7 (size before relaxing)
- .debug_str     0x0006427f       0xc4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
+ .debug_str     0x000642bc       0xc4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c.obj
                               0x5d2d4 (size before relaxing)
- .debug_str     0x00064343      0x35e CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
+ .debug_str     0x00064380      0x35e CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c.obj
                               0x5d6ea (size before relaxing)
- .debug_str     0x000646a1      0x113 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
+ .debug_str     0x000646de      0x113 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c.obj
                               0x5d32c (size before relaxing)
- .debug_str     0x000647b4      0x242 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
+ .debug_str     0x000647f1      0x242 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c.obj
                               0x5d531 (size before relaxing)
- .debug_str     0x000649f6      0x1c4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
+ .debug_str     0x00064a33      0x1c4 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c.obj
                               0x5d4db (size before relaxing)
- .debug_str     0x00064bba      0xd2f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
+ .debug_str     0x00064bf7      0xd2f CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c.obj
                               0x5e5a1 (size before relaxing)
- .debug_str     0x000658e9      0x4c0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
+ .debug_str     0x00065926      0x4c0 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c.obj
                               0x5ddad (size before relaxing)
- .debug_str     0x00065da9      0x860 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
+ .debug_str     0x00065de6      0x860 CMakeFiles/lvipanel_firmware.dir/Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c.obj
                               0x5dea4 (size before relaxing)
- .debug_str     0x00066609       0x62 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
+ .debug_str     0x00066646       0x62 CMakeFiles/lvipanel_firmware.dir/startup_stm32f030x6.s.obj
                                  0x9e (size before relaxing)
- .debug_str     0x0006666b      0x46b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
+ .debug_str     0x000666a8      0x46b C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-malloc.o)
                                 0x54f (size before relaxing)
- .debug_str     0x00066ad6       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
+ .debug_str     0x00066b13       0x58 C:/ST/STM32CubeCLT_1.16.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/nofp\libg_nano.a(libc_a-errno.o)
                                 0x524 (size before relaxing)
 
 .comment        0x00000000       0x43

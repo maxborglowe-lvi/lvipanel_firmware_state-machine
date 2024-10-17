@@ -19,6 +19,7 @@
         "panel.h": "c",
         "usart.h": "c",
         "i2c.h": "c",
-        "panel_events.h": "c"
+        "panel_events.h": "c",
+        "peripheral_events.h": "c"
     }
 }
