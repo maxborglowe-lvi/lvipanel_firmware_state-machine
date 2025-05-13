@@ -34,7 +34,6 @@
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
-
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
@@ -203,21 +202,6 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-
-
-
-
-// void System_OnOff(){
-// 	if(systemState == SYSTEM_STATE_OFF){
-// 		OnOff_Trigger();
-// 		systemState = SYSTEM_STATE_BOOTING;
-// 	} else if(systemState == SYSTEM_STATE_ON) {
-// 		OnOff_Trigger();
-// 		systemState = SYSTEM_STATE_SHUTDOWN;
-// 	}
-// }
-
-
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {

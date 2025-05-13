@@ -31,7 +31,7 @@
 
 #define PERIPHERAL_HOLD_TIME 	5100 /* ms */
 #define PERIPHERAL_PRESS_DOUBLE_TIME 350 /* ms */
-off_t
+
 extern PeripheralEvent peripheralEvent;
 
 enum {
