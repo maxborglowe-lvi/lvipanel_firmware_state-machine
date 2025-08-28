@@ -179,7 +179,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "c:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug"
+			"value" : "c:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -619,7 +619,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug/CMakeFiles/pkgRedirects"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -679,7 +679,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1155,11 +1155,11 @@
 			[
 				{
 					"name" : "HELPSTRING",
-					"value" : "No help, variable specified on the command line."
+					"value" : "The CMake toolchain file"
 				}
 			],
-			"type" : "UNINITIALIZED",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/gcc-arm-none-eabi.cmake"
+			"type" : "FILEPATH",
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/gcc-arm-none-eabi.cmake"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1187,7 +1187,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug"
 		},
 		{
 			"name" : "lvipanel_firmware_IS_TOP_LEVEL",
@@ -1211,7 +1211,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart"
 		},
 		{
 			"name" : "stm32cubemx_BINARY_DIR",
@@ -1223,7 +1223,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug/cmake/stm32cubemx"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug/cmake/stm32cubemx"
 		},
 		{
 			"name" : "stm32cubemx_IS_TOP_LEVEL",
@@ -1247,7 +1247,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx"
+			"value" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx"
 		}
 	],
 	"kind" : "cache",

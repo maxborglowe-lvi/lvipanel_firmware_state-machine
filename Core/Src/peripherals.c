@@ -9,18 +9,18 @@ PeripheralEvent peripheralEvent;
 
 // Use a lookup table to handle button presses
 static PeripheralEvent buttonEventTable[MAX_AMT_BTNS][4] = {
-	// BTN_STATE_PRESS           BTN_STATE_HOLD           BTN_STATE_REL
-	[BTN_ID_ONOFF]				= {PERIPHERAL_EVENT_ONOFF_PRESS,               PERIPHERAL_EVENT_ONOFF_PRESS_HOLD,              PERIPHERAL_EVENT_ONOFF_PRESS_DOUBLE,            PERIPHERAL_EVENT_ONOFF_RELEASE},
-	[BTN_ID_FUNCTION] 			= {PERIPHERAL_EVENT_FUNCTION_PRESS,            PERIPHERAL_EVENT_FUNCTION_PRESS_HOLD,           PERIPHERAL_EVENT_FUNCTION_PRESS_DOUBLE,         PERIPHERAL_EVENT_FUNCTION_RELEASE},
-	[BTN_ID_ZOOM]     			= {PERIPHERAL_EVENT_ZOOM_PRESS,                PERIPHERAL_EVENT_ZOOM_PRESS_HOLD,               PERIPHERAL_EVENT_ZOOM_PRESS_DOUBLE,             PERIPHERAL_EVENT_ZOOM_RELEASE},
-	[BTN_ID_COLOR_ARTIFICIAL] 	= {PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS,    PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_HOLD,   PERIPHERAL_EVENT_COLOR_ARTIFICIAL_PRESS_DOUBLE, PERIPHERAL_EVENT_COLOR_ARTIFICIAL_RELEASE},
-	[BTN_ID_COLOR_NATURAL]    	= {PERIPHERAL_EVENT_COLOR_NATURAL_PRESS,       PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_HOLD,      PERIPHERAL_EVENT_COLOR_NATURAL_PRESS_DOUBLE,    PERIPHERAL_EVENT_COLOR_NATURAL_RELEASE}
-};
+    // BTN_STATE_PRESS           BTN_STATE_HOLD           BTN_STATE_REL
+    [BTN_ID_ONOFF] = {PERIPHERAL_EVENT_ONOFF_PRESS, PERIPHERAL_EVENT_ONOFF_PRESS_HOLD, PERIPHERAL_EVENT_ONOFF_PRESS_DOUBLE, PERIPHERAL_EVENT_ONOFF_RELEASE},
+    [BTN_ID_LEVEL] = {PERIPHERAL_EVENT_LEVEL_PRESS, PERIPHERAL_EVENT_LEVEL_PRESS_HOLD, PERIPHERAL_EVENT_LEVEL_PRESS_DOUBLE, PERIPHERAL_EVENT_LEVEL_RELEASE},
+    [BTN_ID_FUNCTION] = {PERIPHERAL_EVENT_FUNCTION_PRESS, PERIPHERAL_EVENT_FUNCTION_PRESS_HOLD, PERIPHERAL_EVENT_FUNCTION_PRESS_DOUBLE, PERIPHERAL_EVENT_FUNCTION_RELEASE},
+    [BTN_ID_CAMERA] = {PERIPHERAL_EVENT_CAMERA_PRESS, PERIPHERAL_EVENT_CAMERA_PRESS_HOLD, PERIPHERAL_EVENT_CAMERA_PRESS_DOUBLE, PERIPHERAL_EVENT_CAMERA_RELEASE},
+    [BTN_ID_1] = {PERIPHERAL_EVENT_1_PRESS, PERIPHERAL_EVENT_1_PRESS_HOLD, PERIPHERAL_EVENT_1_PRESS_DOUBLE, PERIPHERAL_EVENT_1_RELEASE},
+    [BTN_ID_2] = {PERIPHERAL_EVENT_2_PRESS, PERIPHERAL_EVENT_2_PRESS_HOLD, PERIPHERAL_EVENT_2_PRESS_DOUBLE, PERIPHERAL_EVENT_2_RELEASE},
+    [BTN_ID_3] = {PERIPHERAL_EVENT_3_PRESS, PERIPHERAL_EVENT_3_PRESS_HOLD, PERIPHERAL_EVENT_3_PRESS_DOUBLE, PERIPHERAL_EVENT_3_RELEASE}};
 
 static PeripheralEvent encoderEventTable[MAX_AMT_ENCS][2] = {
-	[ENC_ID_FUNCTION] = { PERIPHERAL_EVENT_FUNCTION_CW, PERIPHERAL_EVENT_FUNCTION_CCW },
-	[ENC_ID_ZOOM]     = { PERIPHERAL_EVENT_ZOOM_CW,     PERIPHERAL_EVENT_ZOOM_CCW }
-};
+    [ENC_ID_LEVEL] = {PERIPHERAL_EVENT_LEVEL_CW, PERIPHERAL_EVENT_LEVEL_CCW},
+    [ENC_ID_FUNCTION] = {PERIPHERAL_EVENT_FUNCTION_CW, PERIPHERAL_EVENT_FUNCTION_CCW}};
 
 uint8_t enc_read;
 
@@ -32,7 +32,8 @@ uint8_t enc_read;
  * @param PORT The GPIO port of the button.
  * @param PIN The GPIO pin of the button.
  */
-void Peripheral_ButtonInit(Button *btn, PeripheralID id, ButtonMode mode, GPIO_TypeDef *PORT, uint16_t PIN) {
+void Peripheral_ButtonInit(Button *btn, PeripheralID id, ButtonMode mode, GPIO_TypeDef *PORT, uint16_t PIN)
+{
     btn->id = id;
     btn->mode = mode;
     btn->sig = (mode == BTN_MODE_LO) ? BTN_LO_RST : BTN_HI_RST;
@@ -52,81 +53,93 @@ void Peripheral_ButtonInit(Button *btn, PeripheralID id, ButtonMode mode, GPIO_T
  * @brief Scans the current value of a button and updates its state.
  * @param btn The button being scanned.
  */
-void Peripheral_ButtonScan(Button *btn) {
+void Peripheral_ButtonScan(Button *btn)
+{
     uint8_t btn_sig_prev = btn->sig;
     btn->sig = HAL_GPIO_ReadPin(btn->PORT, btn->PIN);
     uint8_t btn_read = CONCAT_BTN_READ(btn_sig_prev, btn->sig);
 
-    if (btn->mode == BTN_MODE_LO) {
-        btn->state = (btn_read == BTN_LO_PRESS) ? BTN_STATE_PRESS :
-                     (btn_read == BTN_LO_HOLD) ? BTN_STATE_HOLD :
-                     (btn_read == BTN_LO_REL) ? BTN_STATE_REL :
-                     (btn_read == BTN_LO_RST) ? BTN_STATE_RST : btn->state;
-    } else {
-        btn->state = (btn_read == BTN_HI_PRESS) ? BTN_STATE_PRESS :
-                     (btn_read == BTN_HI_HOLD) ? BTN_STATE_HOLD :
-                     (btn_read == BTN_HI_REL) ? BTN_STATE_REL :
-                     (btn_read == BTN_HI_RST) ? BTN_STATE_RST : btn->state;
+    if (btn->mode == BTN_MODE_LO)
+    {
+        btn->state = (btn_read == BTN_LO_PRESS) ? BTN_STATE_PRESS : (btn_read == BTN_LO_HOLD) ? BTN_STATE_HOLD
+                                                                : (btn_read == BTN_LO_REL)    ? BTN_STATE_REL
+                                                                : (btn_read == BTN_LO_RST)    ? BTN_STATE_RST
+                                                                                              : btn->state;
+    }
+    else
+    {
+        btn->state = (btn_read == BTN_HI_PRESS) ? BTN_STATE_PRESS : (btn_read == BTN_HI_HOLD) ? BTN_STATE_HOLD
+                                                                : (btn_read == BTN_HI_REL)    ? BTN_STATE_REL
+                                                                : (btn_read == BTN_HI_RST)    ? BTN_STATE_RST
+                                                                                              : btn->state;
     }
 }
 
 /** @brief Executes the scanned button commands. */
-void Peripheral_ButtonExec(Button *btn) {
+void Peripheral_ButtonExec(Button *btn)
+{
     peripheralEvent = PERIPHERAL_EVENT_IDLE;
 
-    #ifdef PERIPHERAL_SPECIAL_EVENTS
+#ifdef PERIPHERAL_SPECIAL_EVENTS
     uint8_t notPressDouble = timerCountUp(&btn->timer_press_double);
 
-    if (notPressDouble) {
+    if (notPressDouble)
+    {
         timerDisable(&btn->timer_press_double);
     }
 
-    switch (btn->state) {
-        case BTN_STATE_PRESS:
-            timerReset(&btn->timer_hold);
-            timerEnable(&btn->timer_hold);
-            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
-            break;
-        case BTN_STATE_HOLD:
-            if (timerCountUp(&btn->timer_hold)) {
-                peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_HOLD];
-            }
-            break;
-        case BTN_STATE_REL:
-            if (timerIsEnabled(&btn->timer_press_double)) {
-                peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_DOUBLE];
-                timerDisable(&btn->timer_press_double);
-            } else {
-                timerReset(&btn->timer_press_double);
-                timerEnable(&btn->timer_press_double);
-            }
-            timerDisable(&btn->timer_hold);
-            break;
-        default:
-            break;
+    switch (btn->state)
+    {
+    case BTN_STATE_PRESS:
+        timerReset(&btn->timer_hold);
+        timerEnable(&btn->timer_hold);
+        peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
+        break;
+    case BTN_STATE_HOLD:
+        if (timerCountUp(&btn->timer_hold))
+        {
+            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_HOLD];
+        }
+        break;
+    case BTN_STATE_REL:
+        if (timerIsEnabled(&btn->timer_press_double))
+        {
+            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_DOUBLE];
+            timerDisable(&btn->timer_press_double);
+        }
+        else
+        {
+            timerReset(&btn->timer_press_double);
+            timerEnable(&btn->timer_press_double);
+        }
+        timerDisable(&btn->timer_hold);
+        break;
+    default:
+        break;
     }
-    #else
-    switch (btn->state) {
-        case BTN_STATE_PRESS:
-            timerReset(&btn->timer_hold);
-            timerEnable(&btn->timer_hold);
-            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
-            break;
-        case BTN_STATE_HOLD:
-            if (timerCountUp(&btn->timer_hold)) {
-                peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_HOLD];
-            }
-            break;
-        case BTN_STATE_REL:
-            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_RELEASE];
-            timerDisable(&btn->timer_hold);
-            break;
-        
-        default:
-            break;
+#else
+    switch (btn->state)
+    {
+    case BTN_STATE_PRESS:
+        timerReset(&btn->timer_hold);
+        timerEnable(&btn->timer_hold);
+        peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS];
+        break;
+    case BTN_STATE_HOLD:
+        if (timerCountUp(&btn->timer_hold))
+        {
+            peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_PRESS_HOLD];
+        }
+        break;
+    case BTN_STATE_REL:
+        peripheralEvent = buttonEventTable[btn->id][PERIPHERAL_EVENT_ID_RELEASE];
+        timerDisable(&btn->timer_hold);
+        break;
+
+    default:
+        break;
     }
-    #endif
-    
+#endif
 }
 
 /**
@@ -140,7 +153,8 @@ void Peripheral_ButtonExec(Button *btn) {
  * @param PIN_B The GPIO pin for encoder channel B.
  */
 void Peripheral_EncoderInit(Encoder *enc, PeripheralID id, EncoderMode mode, GPIO_TypeDef *PORT_A,
-                             uint16_t PIN_A, GPIO_TypeDef *PORT_B, uint16_t PIN_B) {
+                            uint16_t PIN_A, GPIO_TypeDef *PORT_B, uint16_t PIN_B)
+{
     enc->id = id;
     enc->mode = mode;
     enc->state = ENC_STATE_RST;
@@ -157,8 +171,10 @@ void Peripheral_EncoderInit(Encoder *enc, PeripheralID id, EncoderMode mode, GPI
  * @brief Scans the current values of an encoder's A- and B-channels and updates its state.
  * @param enc The encoder being scanned.
  */
-void Peripheral_EncoderScan(Encoder *enc) {
-    if (enc->state == ENC_STATE_RST) {
+void Peripheral_EncoderScan(Encoder *enc)
+{
+    if (enc->state == ENC_STATE_RST)
+    {
         uint8_t enc_ch_a_prev = enc->ch_a;
         uint8_t enc_ch_b_prev = enc->ch_b;
 
@@ -167,10 +183,11 @@ void Peripheral_EncoderScan(Encoder *enc) {
 
         enc_read = CONCAT_ENC_READ(enc_ch_a_prev, enc->ch_a, enc_ch_b_prev, enc->ch_b);
 
-        if (enc->mode == ENC_MODE_UNMATCHED || enc->mode == ENC_MODE_MATCHED) {
-            enc->state = (enc_read == ENC_CW1 || enc_read == ENC_CW2) ? ENC_STATE_CW :
-                         (enc_read == ENC_CCW1 || enc_read == ENC_CCW2) ? ENC_STATE_CCW :
-                         (enc_read == ENC_RST1 || enc_read == ENC_RST2) ? ENC_STATE_RST : enc->state;
+        if (enc->mode == ENC_MODE_UNMATCHED || enc->mode == ENC_MODE_MATCHED)
+        {
+            enc->state = (enc_read == ENC_CW1 || enc_read == ENC_CW2) ? ENC_STATE_CW : (enc_read == ENC_CCW1 || enc_read == ENC_CCW2) ? ENC_STATE_CCW
+                                                                                   : (enc_read == ENC_RST1 || enc_read == ENC_RST2)   ? ENC_STATE_RST
+                                                                                                                                      : enc->state;
         }
     }
 }
@@ -179,57 +196,68 @@ void Peripheral_EncoderScan(Encoder *enc) {
  * @brief Executes the scanned encoder commands.
  * @param enc The encoder being executed.
  */
-void Peripheral_EncoderExec(Encoder *enc) {
-    peripheralEvent = (enc->state == ENC_STATE_CW) ? encoderEventTable[enc->id][0] :
-                      (enc->state == ENC_STATE_CCW) ? encoderEventTable[enc->id][1] : PERIPHERAL_EVENT_IDLE;
+void Peripheral_EncoderExec(Encoder *enc)
+{
+    peripheralEvent = (enc->state == ENC_STATE_CW) ? encoderEventTable[enc->id][0] : (enc->state == ENC_STATE_CCW) ? encoderEventTable[enc->id][1]
+                                                                                                                   : PERIPHERAL_EVENT_IDLE;
     enc->state = ENC_STATE_RST;
 }
 
-void Peripheral_InitGroup(void){
+void Peripheral_InitGroup(void)
+{
 
-	// Allocate memory for the peripheral group
-	peripheralGroup = (PeripheralGroup *)malloc(sizeof(PeripheralGroup));
-	if (peripheralGroup == NULL) {
-		// Handle memory allocation failure
-		return;
-	}
+    // Allocate memory for the peripheral group
+    peripheralGroup = (PeripheralGroup *)malloc(sizeof(PeripheralGroup));
+    if (peripheralGroup == NULL)
+    {
+        // Handle memory allocation failure
+        return;
+    }
 
-	memset(peripheralGroup, 0, sizeof(PeripheralGroup)); // Zero-initialize the memory
+    memset(peripheralGroup, 0, sizeof(PeripheralGroup)); // Zero-initialize the memory
 
-	Peripheral_ButtonInit(&peripheralGroup->btn[0], BTN_ID_ONOFF, BTN_MODE_LO, ONOFF_GPIO_Port, ONOFF_Pin);
-	Peripheral_ButtonInit(&peripheralGroup->btn[1], BTN_ID_FUNCTION, BTN_MODE_LO, BTN_FUNCTION_GPIO_Port, BTN_FUNCTION_Pin);
-	Peripheral_ButtonInit(&peripheralGroup->btn[2], BTN_ID_ZOOM, BTN_MODE_LO, BTN_ZOOM_GPIO_Port, BTN_ZOOM_Pin);
-	Peripheral_ButtonInit(&peripheralGroup->btn[3], BTN_ID_COLOR_NATURAL, BTN_MODE_LO, BTN_COLOR_NATURAL_GPIO_Port, BTN_COLOR_NATURAL_Pin);
-	Peripheral_ButtonInit(&peripheralGroup->btn[4], BTN_ID_COLOR_ARTIFICIAL, BTN_MODE_LO, BTN_COLOR_ARTIFICIAL_GPIO_Port, BTN_COLOR_ARTIFICIAL_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[0], BTN_ID_ONOFF, BTN_MODE_LO, ONOFF_GPIO_Port, ONOFF_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[1], BTN_ID_LEVEL, BTN_MODE_LO, BTN_LEVEL_GPIO_Port, BTN_LEVEL_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[2], BTN_ID_FUNCTION, BTN_MODE_LO, BTN_FUNCTION_GPIO_Port, BTN_FUNCTION_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[3], BTN_ID_1, BTN_MODE_LO, BTN_1_GPIO_Port, BTN_1_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[4], BTN_ID_2, BTN_MODE_LO, BTN_2_GPIO_Port, BTN_2_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[5], BTN_ID_3, BTN_MODE_LO, BTN_3_GPIO_Port, BTN_3_Pin);
+    Peripheral_ButtonInit(&peripheralGroup->btn[6], BTN_ID_CAMERA, BTN_MODE_LO, BTN_CAMERA_GPIO_Port, BTN_CAMERA_Pin);
 
-	Peripheral_EncoderInit(&peripheralGroup->enc[0], ENC_ID_FUNCTION, ENC_MODE_UNMATCHED, ENC_FUNCTION_CH_A_GPIO_Port, ENC_FUNCTION_CH_A_Pin, ENC_FUNCTION_CH_B_GPIO_Port, ENC_FUNCTION_CH_B_Pin);
-	Peripheral_EncoderInit(&peripheralGroup->enc[1], ENC_ID_ZOOM, ENC_MODE_UNMATCHED, ENC_ZOOM_CH_A_GPIO_Port, ENC_ZOOM_CH_A_Pin, ENC_ZOOM_CH_B_GPIO_Port, ENC_ZOOM_CH_B_Pin);
+    Peripheral_EncoderInit(&peripheralGroup->enc[0], ENC_ID_LEVEL, ENC_MODE_UNMATCHED, ENC_LEVEL_CH_A_GPIO_Port, ENC_LEVEL_CH_A_Pin, ENC_LEVEL_CH_B_GPIO_Port, ENC_LEVEL_CH_B_Pin);
+    Peripheral_EncoderInit(&peripheralGroup->enc[1], ENC_ID_FUNCTION, ENC_MODE_UNMATCHED, ENC_FUNCTION_CH_A_GPIO_Port, ENC_FUNCTION_CH_A_Pin, ENC_FUNCTION_CH_B_GPIO_Port, ENC_FUNCTION_CH_B_Pin);
 
-	peripheral_amount_btns = 5;
-	peripheral_amount_encs = 2;
+    peripheral_amount_btns = 7;
+    peripheral_amount_encs = 2;
 }
 
-void Peripheral_ScanGroup(void){
-	/* Scan buttons active in panel */
-	for (int i = 0; i < peripheral_amount_btns; i++) {
-		/* Perform scan and exec if button is initialized*/
-		if(peripheralGroup->btn[i].init_flag){
-			Peripheral_ButtonScan(&peripheralGroup->btn[i]);
-			/* Execute commands gathered during scan */
-			Peripheral_ButtonExec(&peripheralGroup->btn[i]);
-			if(peripheralEvent != PERIPHERAL_EVENT_IDLE) return;
-		}
-	}
+void Peripheral_ScanGroup(void)
+{
+    /* Scan buttons active in panel */
+    for (int i = 0; i < peripheral_amount_btns; i++)
+    {
+        /* Perform scan and exec if button is initialized*/
+        if (peripheralGroup->btn[i].init_flag)
+        {
+            Peripheral_ButtonScan(&peripheralGroup->btn[i]);
+            /* Execute commands gathered during scan */
+            Peripheral_ButtonExec(&peripheralGroup->btn[i]);
+            if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
+                return;
+        }
+    }
 
-	/* Scan encoders active in panel */
-	for (int i = 0; i < peripheral_amount_encs; i++) {
-		/* Perform scan and exec if encoder is initialized*/
-		if(peripheralGroup->enc[i].init_flag){
-			Peripheral_EncoderScan(&peripheralGroup->enc[i]);
-			/* Execute commands gathered during scan */
-			Peripheral_EncoderExec(&peripheralGroup->enc[i]);
-			if(peripheralEvent != PERIPHERAL_EVENT_IDLE) return;
-		}
-	}
+    /* Scan encoders active in panel */
+    for (int i = 0; i < peripheral_amount_encs; i++)
+    {
+        /* Perform scan and exec if encoder is initialized*/
+        if (peripheralGroup->enc[i].init_flag)
+        {
+            Peripheral_EncoderScan(&peripheralGroup->enc[i]);
+            /* Execute commands gathered during scan */
+            Peripheral_EncoderExec(&peripheralGroup->enc[i]);
+            if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
+                return;
+        }
+    }
 }
-

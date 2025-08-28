@@ -66,7 +66,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "lvipanel_firmware::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-lvipanel_firmware-Debug-90a4119c5bccdc089027.json",
+					"jsonFile" : "target-lvipanel_firmware-Debug-2f8c5391698f4cfc8e28.json",
 					"name" : "lvipanel_firmware",
 					"projectIndex" : 0
 				}
@@ -76,8 +76,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug",
-		"source" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware"
+		"build" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug",
+		"source" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart"
 	},
 	"version" : 
 	{

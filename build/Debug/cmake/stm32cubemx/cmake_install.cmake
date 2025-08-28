@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx
+# Install script for directory: C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

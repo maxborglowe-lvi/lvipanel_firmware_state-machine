@@ -2,7 +2,7 @@
 #include "peripherals.h"
 #include "lights.h"
 #include "tim.h"
-#include "i2c.h"
+// #include "i2c.h"
 #include "panel_events.h"
 #include "timer.h"
 
@@ -11,7 +11,8 @@
 
 #define TRY_BOOT_CYCLES 10000
 
-typedef enum {
+typedef enum
+{
     SYSTEM_STATE_OFF = 1,
     SYSTEM_STATE_BOOT,
     SYSTEM_STATE_ON,
@@ -19,7 +20,8 @@ typedef enum {
 
 } SystemState;
 
-typedef enum {
+typedef enum
+{
     SYSTEM_FLAG_NONE,
     SYSTEM_FLAG_LIGHT_GREEN_SOLID,
     SYSTEM_FLAG_LIGHT_GREEN_FLASH,
@@ -38,6 +40,8 @@ void Panel_Scan();
 
 void Panel_HandleEventPeripherals();
 void Panel_OnOff();
+void Panel_OnOffBegin();
+void Panel_OnOffEnd();
 void Panel_CheckSystemFlag();
 void Panel_TryBoot();
 

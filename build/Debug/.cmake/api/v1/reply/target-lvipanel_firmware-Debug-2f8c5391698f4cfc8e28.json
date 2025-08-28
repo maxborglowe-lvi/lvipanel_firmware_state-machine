@@ -63,7 +63,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
+					"fragment" : " -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g -std=gnu11"
 				},
 				{
 					"backtrace" : 2,
@@ -89,27 +89,27 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/Core/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/Core/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F0xx/Include"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F0xx/Include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "C",
@@ -160,7 +160,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -x assembler-with-cpp -MMD -MP -g"
+					"fragment" : " -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -x assembler-with-cpp -MMD -MP -g"
 				},
 				{
 					"backtrace" : 2,
@@ -186,27 +186,27 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/Core/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/Core/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Core/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Core/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F0xx/Include"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/CMSIS/Device/ST/STM32F0xx/Include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
+					"path" : "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/cmake/stm32cubemx/../../Drivers/CMSIS/Include"
 				}
 			],
 			"language" : "ASM",
@@ -222,7 +222,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g",
+				"fragment" : "-mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -mcpu=cortex-m0  -Wall -Wextra -Wpedantic -fdata-sections -ffunction-sections -O0 -g3 -g",
 				"role" : "flags"
 			},
 			{
@@ -298,12 +298,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Core/Src/i2c.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "Core/Src/lights.c",
 			"sourceGroupIndex" : 0
 		},
@@ -374,6 +368,12 @@
 			"sourceGroupIndex" : 0
 		},
 		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Core/Src/visca.c",
+			"sourceGroupIndex" : 0
+		},
+		{
 			"backtrace" : 5,
 			"path" : "Core",
 			"sourceGroupIndex" : 1
@@ -381,13 +381,13 @@
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c",
+			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
-			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c",
+			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -406,6 +406,18 @@
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 3,
+			"compileGroupIndex" : 0,
+			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -454,18 +466,6 @@
 			"backtrace" : 3,
 			"compileGroupIndex" : 0,
 			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 3,
-			"compileGroupIndex" : 0,
-			"path" : "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_tim_ex.c",
 			"sourceGroupIndex" : 0
 		},
 		{

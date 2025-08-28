@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/MB2/Documents/GitHub/lvipanel_firmware
+# Install script for directory: C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
+  include("C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug/cmake/stm32cubemx/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/MB2/Documents/GitHub/lvipanel_firmware/build/Debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/MB2/Documents/GitHub/lvipanel_firmware_visus-uart/build/Debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

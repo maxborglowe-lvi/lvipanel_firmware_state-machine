@@ -51,21 +51,27 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : PAPin PAPin PAPin PAPin
-                           PAPin PAPin PAPin PAPin */
-  GPIO_InitStruct.Pin = ENC_ZOOM_CH_B_Pin|ENC_FUNCTION_CH_A_Pin|ENC_FUNCTION_CH_B_Pin|BTN_FUNCTION_Pin
-                          |ENC_ZOOM_CH_A_Pin|BTN_ZOOM_Pin|BTN_COLOR_NATURAL_Pin|BTN_COLOR_ARTIFICIAL_Pin;
+  /*Configure GPIO pins : ENC_FUNCTION_CH_A_Pin ENC_LEVEL_CH_A_Pin ENC_LEVEL_CH_B_Pin BTN_LEVEL_Pin
+                           ENC_FUNCTION_CH_B_Pin BTN_FUNCTION_Pin BTN_3_Pin BTN_CAMERA_Pin */
+  GPIO_InitStruct.Pin = ENC_FUNCTION_CH_A_Pin|ENC_LEVEL_CH_A_Pin|ENC_LEVEL_CH_B_Pin|BTN_LEVEL_Pin
+                          |ENC_FUNCTION_CH_B_Pin|BTN_FUNCTION_Pin|BTN_3_Pin|BTN_CAMERA_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PtPin */
+  /*Configure GPIO pins : BTN_1_Pin BTN_2_Pin */
+  GPIO_InitStruct.Pin = BTN_1_Pin|BTN_2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : ONOFF_Pin */
   GPIO_InitStruct.Pin = ONOFF_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : PtPin */
+  /*Configure GPIO pin : SWD_LED_SEL_Pin */
   GPIO_InitStruct.Pin = SWD_LED_SEL_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;

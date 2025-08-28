@@ -18,7 +18,6 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "i2c.h"
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
@@ -27,6 +26,7 @@
 /* USER CODE BEGIN Includes */
 
 #include "panel.h"
+#include "visca.h"
 
 /* USER CODE END Includes */
 
@@ -34,6 +34,7 @@
 /* USER CODE BEGIN PTD */
 
 /* USER CODE END PTD */
+
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
@@ -42,15 +43,16 @@
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
-
-enum {
-	TIM_ITR_UNLOCKED,
-	TIM_ITR_LOCKED
+enum
+{
+  TIM_ITR_UNLOCKED,
+  TIM_ITR_LOCKED
 };
 
-enum {
-	GPIO_INPUT,
-	GPIO_OUTPUT
+enum
+{
+  GPIO_INPUT,
+  GPIO_OUTPUT
 };
 
 /* USER CODE END PM */
@@ -61,7 +63,7 @@ enum {
 
 uint8_t timerInterruptLock;
 
-
+uint32_t clock = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -76,9 +78,9 @@ void SystemClock_Config(void);
 /* USER CODE END 0 */
 
 /**
-  * @brief  The application entry point.
-  * @retval int
-  */
+ * @brief  The application entry point.
+ * @retval int
+ */
 int main(void)
 {
 
@@ -104,61 +106,61 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_I2C1_Init();
   MX_USART1_UART_Init();
   MX_TIM3_Init();
   MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
 
-	__disable_irq();
+  // __disable_irq();
 
+  Peripheral_InitGroup();
 
-	Peripheral_InitGroup(); 
+  Panel_Init();
 
-	if(HAL_I2C_EnableListen_IT(&hi2c1) != HAL_OK)
-	{
-		/* Transfer error in reception process */
-		Error_Handler();
-	}
+  VISCA_Init(&huart1);
 
-	Panel_Init();
+  // Turn camera 1 on
+  VISCA_CameraPower(1, 1);
 
-	HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, SET);
-	// HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, RESET);
+  VISCA_Zoom(1, 1, 30); // Zoom out on start
 
+#ifdef DEBUG
+  HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, RESET);
+#else
+  HAL_GPIO_WritePin(SWD_LED_SEL_GPIO_Port, SWD_LED_SEL_Pin, SET);
+#endif
 
-	HAL_TIM_Base_Start_IT(&htim14);
-	timerInterruptLock = TIM_ITR_UNLOCKED;
+  HAL_TIM_Base_Start_IT(&htim14);
+  timerInterruptLock = TIM_ITR_UNLOCKED;
 
-	__enable_irq();
+  __enable_irq();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-	while (1)
-	{
-		/* 1. Peripheral scan sequence */
-		if (timerInterruptLock == TIM_ITR_LOCKED)
-		{ /* Wait for timer interrupt to happen */
+  while (1)
+  {
+    /* 1. Peripheral scan sequence */
+    if (timerInterruptLock == TIM_ITR_LOCKED)
+    { /* Wait for timer interrupt to happen */
 
-			Panel_Scan();
+      Panel_Scan();
 
-			timerInterruptLock = TIM_ITR_UNLOCKED;
-
-		}
+      timerInterruptLock = TIM_ITR_UNLOCKED;
+    }
 
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	}
+  }
   /* USER CODE END 3 */
 }
 
 /**
-  * @brief System Clock Configuration
-  * @retval None
-  */
+ * @brief System Clock Configuration
+ * @retval None
+ */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -166,8 +168,8 @@ void SystemClock_Config(void)
   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
 
   /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
+   * in the RCC_OscInitTypeDef structure.
+   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
@@ -181,9 +183,8 @@ void SystemClock_Config(void)
   }
 
   /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1;
+   */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK | RCC_CLOCKTYPE_PCLK1;
   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
@@ -192,9 +193,8 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1|RCC_PERIPHCLK_I2C1;
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART1;
   PeriphClkInit.Usart1ClockSelection = RCC_USART1CLKSOURCE_PCLK1;
-  PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_HSI;
   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
   {
     Error_Handler();
@@ -205,45 +205,45 @@ void SystemClock_Config(void)
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	if (htim->Instance == TIM14)
-	{
-		if (timerInterruptLock == TIM_ITR_UNLOCKED)
-		{
-			timerInterruptLock = TIM_ITR_LOCKED;
-		}
-	}
+  if (htim->Instance == TIM14)
+  {
+    if (timerInterruptLock == TIM_ITR_UNLOCKED)
+    {
+      timerInterruptLock = TIM_ITR_LOCKED;
+    }
+  }
 }
 
 /* USER CODE END 4 */
 
 /**
-  * @brief  This function is executed in case of error occurrence.
-  * @retval None
-  */
+ * @brief  This function is executed in case of error occurrence.
+ * @retval None
+ */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-	/* User can add his own implementation to report the HAL error return state */
-	__disable_irq();
-	while (1)
-	{
-	}
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
   /* USER CODE END Error_Handler_Debug */
 }
 
-#ifdef  USE_FULL_ASSERT
+#ifdef USE_FULL_ASSERT
 /**
-  * @brief  Reports the name of the source file and the source line number
-  *         where the assert_param error has occurred.
-  * @param  file: pointer to the source file name
-  * @param  line: assert_param error line source number
-  * @retval None
-  */
+ * @brief  Reports the name of the source file and the source line number
+ *         where the assert_param error has occurred.
+ * @param  file: pointer to the source file name
+ * @param  line: assert_param error line source number
+ * @retval None
+ */
 void assert_failed(uint8_t *file, uint32_t line)
 {
   /* USER CODE BEGIN 6 */
-	/* User can add his own implementation to report the file name and line number,
-	   ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
   /* USER CODE END 6 */
 }
 #endif /* USE_FULL_ASSERT */
