@@ -21,6 +21,7 @@ SystemFlag systemFlag; ///< Current system flag
 SystemFlag systemFlagPrev; ///< Previous system flag for change detection
 
 uint8_t PanelOnOffTrigger = 0;
+uint8_t onoffButtonHeld = 0;
 
 Timer timerPanelOnOff;
 
@@ -83,31 +84,40 @@ void Panel_HandleEventPeripherals()
     }
 
     if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS){
-        Panel_OnOff();
 
-        if(systemState == SYSTEM_STATE_OFF){
-            systemFlag = SYSTEM_FLAG_LIGHT_GREEN_FLASH;
-        }
         // else if(systemState == SYSTEM_STATE_ON){
         //     systemFlag = SYSTEM_FLAG_LIGHT_YELLOW_FLASH;
         // }
     } else if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS_HOLD){
+        // Panel_OnOff();
+        onoffButtonHeld = 1;
         if(systemState == SYSTEM_STATE_OFF){
             systemFlag = SYSTEM_FLAG_LIGHT_OFF;
         }
-    }
 
-    if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
-    {
-        panelEvent = (PanelEvent)peripheralEvent;
-        if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_PRESS){
-            if(systemState == SYSTEM_STATE_OFF){
-                panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_BOOT;
-            }
-            else if(systemState == SYSTEM_STATE_ON){
-                panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_SHUTDOWN; 
+        else if (systemState == SYSTEM_STATE_ON)
+        {
+            panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_SHUTDOWN;
+        }
+        
+    } else if(peripheralEvent == PERIPHERAL_EVENT_ONOFF_RELEASE){
+        if (systemState == SYSTEM_STATE_OFF)
+        {
+            Panel_OnOff();
+            panelEvent = (PanelEvent)PANEL_EVENT_SYSTEM_BOOT;
+            systemFlag = SYSTEM_FLAG_LIGHT_GREEN_FLASH;
+        }
+
+        else if(systemState == SYSTEM_STATE_ON){
+            if(!onoffButtonHeld){
+                Panel_OnOffQuick();
             }
         }
+        onoffButtonHeld = 0;
+    }
+    else if (peripheralEvent != PERIPHERAL_EVENT_IDLE)
+    {
+        panelEvent = (PanelEvent)peripheralEvent;
     }
 
     systemStatePrev = systemState; 
@@ -311,14 +321,14 @@ void Panel_OnOffBegin(){
 
     GPIO_InitStruct.Pin = ONOFF_Pin;
 
+    /* Pre-set output to LOW before switching to OUTPUT mode to avoid HIGH spike */
+    HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, RESET);
+
     /* Temporarily change the ONOFF pin GPIO mode to OUTPUT */
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
-
-    /* Trigger and hold ONOFF pin active LOW */
-    HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, RESET);
 }
 
 void Panel_OnOffEnd(){
@@ -331,6 +341,32 @@ void Panel_OnOffEnd(){
     GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
+}
+
+void Panel_OnOffQuick(){
+    PanelOnOffTrigger = 1;
+
+    GPIO_InitStruct.Pin = ONOFF_Pin;
+
+    /* Pre-set output to LOW before switching to OUTPUT mode to avoid HIGH spike */
+    HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, RESET);
+
+    /* Temporarily change the ONOFF pin GPIO mode to OUTPUT */
+    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+    HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
+
+    /* Hold LOW for 10ms */
+    HAL_Delay(10);
+    HAL_GPIO_WritePin(ONOFF_GPIO_Port, ONOFF_Pin, SET);
+
+    /* Change ONOFF pin GPIO mode back to INPUT */
+    GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(ONOFF_GPIO_Port, &GPIO_InitStruct);
+
+    PanelOnOffTrigger = 0;
 }
 
 void HAL_I2C_SlaveTxCpltCallback(I2C_HandleTypeDef *I2cHandle)

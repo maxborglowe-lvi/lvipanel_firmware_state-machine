@@ -29,7 +29,7 @@
 /* Uncomment when using firmware based double-clicks and hold events */
 // #define PERIPHERAL_SPECIAL_EVENTS
 
-#define PERIPHERAL_HOLD_TIME 	5100 /* ms */
+#define PERIPHERAL_HOLD_TIME 	2000 /* ms */
 #define PERIPHERAL_PRESS_DOUBLE_TIME 350 /* ms */
 
 extern PeripheralEvent peripheralEvent;

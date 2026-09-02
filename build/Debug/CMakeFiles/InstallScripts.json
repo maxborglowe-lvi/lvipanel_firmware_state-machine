@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"R:/PRODRITN/Elektronik/Firmware/lvipanel_firmware/build/Debug/cmake_install.cmake",
+		"R:/PRODRITN/Elektronik/Firmware/lvipanel_firmware/build/Debug/cmake/stm32cubemx/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
